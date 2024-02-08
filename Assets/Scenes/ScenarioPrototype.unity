@@ -655,6 +655,8 @@ MonoBehaviour:
   charFlowerpotButton: {fileID: 2141609019}
   char1Image: {fileID: 2141609018}
   char2Image: {fileID: 2141609017}
+  char1Holder: 
+  char2Holder: 
 --- !u!1 &910784437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 844616812413903232, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
@@ -1118,40 +1120,64 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
-      value: 0.19839302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_PressedColor.g
-      value: 0.5283019
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
-      value: 0.07725169
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_DisabledColor.b
-      value: 0.14150941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_DisabledColor.g
-      value: 0.14150941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_DisabledColor.r
-      value: 0.14150941
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.6855288
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.8490566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.5807227
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613904339847518480, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

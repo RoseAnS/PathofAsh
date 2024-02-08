@@ -96,13 +96,48 @@ public class ScenarioController : MonoBehaviour
 
     public void ChooseCharacters(string characterChoice)
     {
-
+        //checks if either of the holders contain the current character choice
         if (char1Holder == characterChoice)
         {
-            
+            if (boxSelected == true)
+            {
+                char1Holder = string.Empty;
+                boxSelected = false;
+            }
+            else if (spikeSelected == true)
+            {
+                char1Holder = string.Empty;
+                spikeSelected = false;
+            }
+            else if (flowerpotSelected == true)
+            {
+                char1Holder = string.Empty;
+                flowerpotSelected = false;
+            }
+            //tells the traits to empty out 
+            FillTraits(1, false, char1Holder);
         }
-
-        else //runs the main 
+        else if (char2Holder == characterChoice)
+        {
+            if (boxSelected == true)
+            {
+                char2Holder = string.Empty;
+                boxSelected = false;
+            }
+            else if (spikeSelected == true)
+            {
+                char2Holder = string.Empty;
+                spikeSelected = false;
+            }
+            else if (flowerpotSelected == true)
+            {
+                char2Holder = string.Empty;
+                flowerpotSelected = false;
+            }
+            //tells the traits to empty out 
+            FillTraits(2, false, char2Holder);
+        }
+        else //runs the main thing if none of the holders contain the clicked character
         {
             if (char1Holder == string.Empty)
             {
@@ -111,7 +146,6 @@ public class ScenarioController : MonoBehaviour
                 if (characterChoice == "box")
                 {
                     boxSelected = true;
-                    Debug.Log("check check");
                 
                 }
                 else if (characterChoice == "spike")
@@ -122,6 +156,7 @@ public class ScenarioController : MonoBehaviour
                 {
                     flowerpotSelected = true;
                 }
+                FillTraits(1,true,char1Holder);
             }
             else if (char2Holder == string.Empty)
             {
@@ -139,6 +174,7 @@ public class ScenarioController : MonoBehaviour
                 {
                     flowerpotSelected = true;
                 }
+                FillTraits(2, true, char2Holder);
             }
             else
             {
@@ -147,6 +183,73 @@ public class ScenarioController : MonoBehaviour
         }
 
     }
+    private void FillTraits(int charHolder, bool removeOrAdd, string characterSelection)
+    {
+        //checks if the information is coming from character holder 1 or 2
+        if (charHolder == 1)
+        {
+            //checks if it needs to remove or add the traits
+            if (removeOrAdd == true)
+            {
+                //sets the text depending on the character
+                if (characterSelection == "box")
+                {
+                    scenarioTraits1Text.text = "this contains box's info";
+                }
+                else if (characterSelection == "spike")
+                {
+                    scenarioTraits1Text.text = "this contains spikes's info";
+                }
+                else if (characterSelection == "flowerpot")
+                {
+                    scenarioTraits1Text.text = "this contains flowerpot's info";
+                }
+                else
+                {
+                    Debug.Log("something has gone wron and no character is currently selected");
+                }
+                scenarioTraits1Obj.SetActive(true);
+            }
+            //deactives the text and makes it empty
+            else if (removeOrAdd == false)
+            {
+                scenarioTraits1Text.text = string.Empty;
+                scenarioTraits1Obj.SetActive(false);
+            }
 
+        }
+        else if (charHolder == 2)
+        {
+            scenarioTraits2Obj.SetActive(true);
+            //checks if it needs to remove or add the traits
+            if (removeOrAdd == true)
+            {
+                //sets the text depending on the character
+                if (characterSelection == "box")
+                {
+                    scenarioTraits2Text.text = "this contains box's info";
+                }
+                else if (characterSelection == "spike")
+                {
+                    scenarioTraits2Text.text = "this contains spikes's info";
+                }
+                else if (characterSelection == "flowerpot")
+                {
+                    scenarioTraits2Text.text = "this contains flowerpot's info";
+                }
+                else
+                {
+                    Debug.Log("something has gone wron and no character is currently selected");
+                }
+                scenarioTraits2Obj.SetActive(true);
+            }
+            //deactives the text and makes it empty
+            else if (removeOrAdd == false)
+            {
+                scenarioTraits2Text.text = string.Empty;
+                scenarioTraits2Obj.SetActive(false);
+            }
+        }
+    }
 
 }
