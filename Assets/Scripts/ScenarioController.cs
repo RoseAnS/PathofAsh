@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink;
 using System.Runtime.CompilerServices;
+using UnityEngine.UI;
 
 public class ScenarioController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class ScenarioController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scenarioTraits2Text;
     [SerializeField] private TextMeshProUGUI dice1Text;
     [SerializeField] private TextMeshProUGUI dice2Text;
+    [SerializeField] private TextMeshProUGUI goButtonText;
 
     [Header("UI Text Object")]
     [SerializeField] private GameObject scenarioTitleObj;
@@ -37,6 +39,7 @@ public class ScenarioController : MonoBehaviour
     [SerializeField] private GameObject charBoxButton;
     [SerializeField] private GameObject charSpikeButton;
     [SerializeField] private GameObject charFlowerpotButton;
+    [SerializeField] private Button scenarioGoButton;
 
     [Header("UI Display")]
     [SerializeField] private GameObject char1Image;
@@ -62,6 +65,20 @@ public class ScenarioController : MonoBehaviour
         scenarioStartButton.SetActive(true);
         ScenarioReset();
 
+    }
+
+    private void Update()
+    {
+        if (char1Holder != string.Empty &&  char2Holder != string.Empty)
+        {
+            goButtonText.text = "GO";
+            scenarioGoButton.interactable = true;
+        }
+        else
+        {
+            scenarioGoButton.interactable = false;
+            goButtonText.text = "Select characters";
+        }
     }
     private void ScenarioReset() //resets the scenario back to default 
     {

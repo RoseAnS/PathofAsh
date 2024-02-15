@@ -773,6 +773,7 @@ MonoBehaviour:
   scenarioTraits2Text: {fileID: 3241890887362259738}
   dice1Text: {fileID: 947598693200677247}
   dice2Text: {fileID: 6270442841069835725}
+  goButtonText: {fileID: 5179194525868741215}
   scenarioTitleObj: {fileID: 1239678298170910331}
   scenarioBodyObj: {fileID: 1412800879373977743}
   scenarioAttributesObj: {fileID: 5696084866362298608}
@@ -781,6 +782,7 @@ MonoBehaviour:
   charBoxButton: {fileID: 3359569335428730066}
   charSpikeButton: {fileID: 361882753418830045}
   charFlowerpotButton: {fileID: 5452580892692223728}
+  scenarioGoButton: {fileID: 7546716810580011635}
   char1Image: {fileID: 8134547267571008685}
   char2Image: {fileID: 5157624407729903826}
   char1Holder: 
@@ -2268,7 +2270,7 @@ GameObject:
   - component: {fileID: 8359449460912871883}
   - component: {fileID: 7546716810580011635}
   m_Layer: 5
-  m_Name: DoScenarioButton
+  m_Name: GoScenarioButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2948,7 +2950,7 @@ GameObject:
   - component: {fileID: 6631422297833398186}
   - component: {fileID: 5179194525868741215}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: goScenarioText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
