@@ -14,6 +14,7 @@ public class ScenarioController : MonoBehaviour
     [SerializeField] private GameObject scenarioCompletorPanel;
     [SerializeField] private GameObject scenarioCharacterPanel;
     [SerializeField] private GameObject scenarioDicePanel;
+    [SerializeField] private GameObject scenarioIntroPanel;
     [Space(10)] //puts space on the UI
 
     [Header("UI Text")]
@@ -288,6 +289,7 @@ public class ScenarioController : MonoBehaviour
     {
         scenarioCompletorPanel.SetActive(false);
         scenarioCharacterPanel.SetActive(false);
+        scenarioIntroPanel.SetActive(false);
         Debug.Log("The outcome of the scenario will be decided");
     }
  
