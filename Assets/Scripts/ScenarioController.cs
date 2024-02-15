@@ -91,7 +91,6 @@ public class ScenarioController : MonoBehaviour
     }
     public void StartScenario() //start of the scenario trigger, happens before anything appears
     {
-        Debug.Log("test");
         scenarioMainPanel.SetActive(true);
         scenarioStartButton.SetActive(false);
         RunScenario();
@@ -265,11 +264,14 @@ public class ScenarioController : MonoBehaviour
             }
         }
     }
+    public void ScenarioGo() //triggers when the Go button is pressed for the scenario
+    {
+        RollTheDice();
+    }
     private void RollTheDice() //Rolls the dice and totals them up
     {
         diceOutcome1 = Random.Range(1, 7);
         diceOutcome2 = Random.Range(1, 7);
-        Debug.Log(diceOutcome1 + " " + diceOutcome2);
 
         diceTotalOutcome = diceOutcome1 + diceOutcome2;
         Debug.Log(diceTotalOutcome);
@@ -277,8 +279,16 @@ public class ScenarioController : MonoBehaviour
         dice2Text.text = diceOutcome2.ToString();
         scenarioDicePanel.SetActive(true);
     }
-    public void ScenarioGo() //triggers when the Go button is pressed for the scenario
+    public void DispelTheDice()
     {
-        RollTheDice();
+        scenarioDicePanel.SetActive(false);
+        ScenarioOutcome();
     }
+    private void ScenarioOutcome()
+    {
+        scenarioCompletorPanel.SetActive(false);
+        scenarioCharacterPanel.SetActive(false);
+        Debug.Log("The outcome of the scenario will be decided");
+    }
+ 
 }
