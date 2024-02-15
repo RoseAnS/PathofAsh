@@ -13,6 +13,7 @@ public class ScenarioController : MonoBehaviour
     [SerializeField] private GameObject scenarioMainPanel;
     [SerializeField] private GameObject scenarioCompletorPanel;
     [SerializeField] private GameObject scenarioCharacterPanel;
+    [SerializeField] private GameObject scenarioDicePanel;
     [Space(10)] //puts space on the UI
 
     [Header("UI Text")]
@@ -21,6 +22,8 @@ public class ScenarioController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scenarioAttributesText;
     [SerializeField] private TextMeshProUGUI scenarioTraits1Text;
     [SerializeField] private TextMeshProUGUI scenarioTraits2Text;
+    [SerializeField] private TextMeshProUGUI dice1Text;
+    [SerializeField] private TextMeshProUGUI dice2Text;
 
     [Header("UI Text Object")]
     [SerializeField] private GameObject scenarioTitleObj;
@@ -47,6 +50,12 @@ public class ScenarioController : MonoBehaviour
     private bool spikeSelected;
     private bool flowerpotSelected;
 
+    //Dice Rolling
+    private int diceOutcome1;
+    private int diceOutcome2;
+    private int diceTotalOutcome;
+
+
     private void Start()
     {
         scenarioStartButton.SetActive(true);
@@ -62,10 +71,11 @@ public class ScenarioController : MonoBehaviour
         scenarioBodyObj.SetActive(false);
         scenarioAttributesObj.SetActive(false);
         scenarioTraits1Obj.SetActive(false);
-        scenarioTraits2Obj.SetActive(false);    
+        scenarioTraits2Obj.SetActive(false);
+        scenarioDicePanel.SetActive(false);
 
         //Empties the character holders
-        char1Holder= string.Empty;
+        char1Holder = string.Empty;
         char2Holder= string.Empty;
 
         // Resets character values
@@ -73,6 +83,10 @@ public class ScenarioController : MonoBehaviour
         boxSelected = false;
         spikeSelected = false;
         flowerpotSelected = false;
+        // Resets all the dice values
+        diceOutcome1 = 0;
+        diceOutcome2 = 0;
+        diceTotalOutcome = 0;
   
     }
     public void StartScenario() //start of the scenario trigger, happens before anything appears
@@ -251,5 +265,20 @@ public class ScenarioController : MonoBehaviour
             }
         }
     }
-    private void 
+    private void RollTheDice() //Rolls the dice and totals them up
+    {
+        diceOutcome1 = Random.Range(1, 7);
+        diceOutcome2 = Random.Range(1, 7);
+        Debug.Log(diceOutcome1 + " " + diceOutcome2);
+
+        diceTotalOutcome = diceOutcome1 + diceOutcome2;
+        Debug.Log(diceTotalOutcome);
+        dice1Text.text = diceOutcome1.ToString();
+        dice2Text.text = diceOutcome2.ToString();
+        scenarioDicePanel.SetActive(true);
+    }
+    public void ScenarioGo() //triggers when the Go button is pressed for the scenario
+    {
+        RollTheDice();
+    }
 }

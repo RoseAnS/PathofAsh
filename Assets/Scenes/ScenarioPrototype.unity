@@ -1022,7 +1022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &596610267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1136,11 +1136,14 @@ MonoBehaviour:
   scenarioMainPanel: {fileID: 8425007382163874697}
   scenarioCompletorPanel: {fileID: 8425007382163874696}
   scenarioCharacterPanel: {fileID: 8425007382163874695}
+  scenarioDicePanel: {fileID: 596610266}
   scenarioTitleText: {fileID: 8425007382163874694}
   scenarioBodyText: {fileID: 8425007382163874693}
   scenarioAttributesText: {fileID: 1928376386}
   scenarioTraits1Text: {fileID: 2141609023}
   scenarioTraits2Text: {fileID: 2141609022}
+  dice1Text: {fileID: 452440997}
+  dice2Text: {fileID: 1757095618}
   scenarioTitleObj: {fileID: 1489634972}
   scenarioBodyObj: {fileID: 723596608}
   scenarioAttributesObj: {fileID: 1928376384}
@@ -1685,6 +1688,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 185191239}
     m_Modifications:
+    - target: {fileID: 2040396059791641079, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040396059791641079, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040396059791641079, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 857804201}
+    - target: {fileID: 2040396059791641079, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040396059791641079, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ScenarioGo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040396059791641079, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScenarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040396059791641079, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2169690262364842982, guid: 703bcee3f771b55419fb6c2c87da4e18, type: 3}
       propertyPath: m_Color.b
       value: 0.29411766
