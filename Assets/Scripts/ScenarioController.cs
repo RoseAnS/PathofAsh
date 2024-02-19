@@ -41,14 +41,22 @@ public class ScenarioController : MonoBehaviour
     [SerializeField] private GameObject charFlowerpotButton;
     [SerializeField] private Button scenarioGoButton;
 
-    [Header("UI Display")]
-    [SerializeField] private GameObject char1Image;
-    [SerializeField] private GameObject char2Image;
+    [Header("UI Character Display")]
+    [SerializeField] private GameObject charImage1Blank;
+    [SerializeField] private GameObject charImage2Blank;
+    [Space(5)]
+    [SerializeField] private GameObject charImage1Box;
+    [SerializeField] private GameObject charImage1Spike;
+    [SerializeField] private GameObject charImage1Flowerpot;
+    [SerializeField] private GameObject charImage2Box;
+    [SerializeField] private GameObject charImage2Spike;
+    [SerializeField] private GameObject charImage2Flowerpot;
 
-    [Header("Character Holders")]
+
+    [Header("Current Selected Characters")]
     [SerializeField] private string char1Holder;
     [SerializeField] private string char2Holder;
-
+    
     // Character bool's
     private bool boxSelected;
     private bool spikeSelected;
@@ -91,7 +99,6 @@ public class ScenarioController : MonoBehaviour
         scenarioTraits1Obj.SetActive(false);
         scenarioTraits2Obj.SetActive(false);
         scenarioDicePanel.SetActive(false);
-
         //Empties the character holders
         char1Holder = string.Empty;
         char2Holder= string.Empty;
@@ -168,7 +175,7 @@ public class ScenarioController : MonoBehaviour
             //tells the traits to empty out 
             FillTraits(2, false, char2Holder);
         }
-        else //runs the main thing if none of the holders contain the clicked character
+        else if (char1Holder != characterChoice && char2Holder != characterChoice) //runs the main thing if none of the holders contain the clicked character
         {
             if (char1Holder == string.Empty)
             {
@@ -177,7 +184,7 @@ public class ScenarioController : MonoBehaviour
                 if (characterChoice == "box")
                 {
                     boxSelected = true;
-                
+
                 }
                 else if (characterChoice == "spike")
                 {
@@ -200,6 +207,7 @@ public class ScenarioController : MonoBehaviour
                 else if (characterChoice == "spike")
                 {
                     spikeSelected = true;
+
                 }
                 else if (characterChoice == "flowerpot")
                 {
@@ -226,14 +234,17 @@ public class ScenarioController : MonoBehaviour
                 if (characterSelection == "box")
                 {
                     scenarioTraits1Text.text = "this contains box's info";
+                    charImage1Box.SetActive(true);
                 }
                 else if (characterSelection == "spike")
                 {
                     scenarioTraits1Text.text = "this contains spikes's info";
+                    charImage1Spike.SetActive(true);
                 }
                 else if (characterSelection == "flowerpot")
                 {
                     scenarioTraits1Text.text = "this contains flowerpot's info";
+                    charImage1Flowerpot.SetActive(true);
                 }
                 else
                 {
@@ -246,6 +257,10 @@ public class ScenarioController : MonoBehaviour
             {
                 scenarioTraits1Text.text = string.Empty;
                 scenarioTraits1Obj.SetActive(false);
+                charImage1Blank.SetActive(true);
+                charImage1Box.SetActive(false);
+                charImage1Flowerpot.SetActive(false);
+                charImage1Spike.SetActive(false);
             }
 
         }
@@ -259,14 +274,17 @@ public class ScenarioController : MonoBehaviour
                 if (characterSelection == "box")
                 {
                     scenarioTraits2Text.text = "this contains box's info";
+                    charImage2Box.SetActive(true);
                 }
                 else if (characterSelection == "spike")
                 {
                     scenarioTraits2Text.text = "this contains spikes's info";
+                    charImage2Spike.SetActive(true);
                 }
                 else if (characterSelection == "flowerpot")
                 {
                     scenarioTraits2Text.text = "this contains flowerpot's info";
+                    charImage2Flowerpot.SetActive(true);
                 }
                 else
                 {
@@ -279,6 +297,10 @@ public class ScenarioController : MonoBehaviour
             {
                 scenarioTraits2Text.text = string.Empty;
                 scenarioTraits2Obj.SetActive(false);
+                charImage2Blank.SetActive(true);
+                charImage2Box.SetActive(false);
+                charImage2Flowerpot.SetActive(false);
+                charImage2Spike.SetActive(false);
             }
         }
     }
