@@ -67,6 +67,13 @@ public class ScenarioController : MonoBehaviour
     private int diceOutcome2;
     private int diceTotalOutcome;
 
+    //Scenario info holders
+
+    // ->  scenario title
+    // ->  scenario text
+    // ->  scenario traits
+    private string scenarioDifficulity;
+    private int scenarioDC;
 
     private void Start()
     {
@@ -118,6 +125,7 @@ public class ScenarioController : MonoBehaviour
     {
         scenarioMainPanel.SetActive(true);
         scenarioStartButton.SetActive(false);
+        GetScenario();
         RunScenario();
     }
 
@@ -221,8 +229,9 @@ public class ScenarioController : MonoBehaviour
             }
         }
 
-    }
-    private void FillTraits(int charHolder, bool removeOrAdd, string characterSelection)
+    } //handles clicking characters and filling the character holders
+
+    private void FillTraits(int charHolder, bool removeOrAdd, string characterSelection) //fills the traits and portraits of character holders
     {
         //checks if the information is coming from character holder 1 or 2
         if (charHolder == 1)
@@ -304,10 +313,12 @@ public class ScenarioController : MonoBehaviour
             }
         }
     }
+
     public void ScenarioGo() //triggers when the Go button is pressed for the scenario
     {
         RollTheDice();
     }
+
     private void RollTheDice() //Rolls the dice and totals them up
     {
         diceOutcome1 = Random.Range(1, 7);
@@ -319,17 +330,41 @@ public class ScenarioController : MonoBehaviour
         dice2Text.text = diceOutcome2.ToString();
         scenarioDicePanel.SetActive(true);
     }
+
     public void DispelTheDice()
     {
         scenarioDicePanel.SetActive(false);
         ScenarioOutcome();
     }
+
     private void ScenarioOutcome()
     {
         scenarioCompletorPanel.SetActive(false);
         scenarioCharacterPanel.SetActive(false);
         scenarioIntroPanel.SetActive(false);
         Debug.Log("The outcome of the scenario will be decided");
+        if(diceTotalOutcome >= scenarioDC)
+        {
+            Debug.Log("Successful outcome!");
+        }
+        else if(diceTotalOutcome < scenarioDC)
+        {
+            Debug.Log("Failure!!!");
+        }
     }
  
+    private void GetScenario() //gets the scenario info from currently fed in script (NOT IMPLIMENTED YET, PLACEHOLDER)
+    {
+        scenarioDifficulity = "moderate";
+        SetDifficulty();
+    }
+
+    private void SetDifficulty()
+    {
+        if(scenarioDifficulity == "moderate")
+        {
+            scenarioDC = 6;
+        }
+        //need to add in other difficulties
+    }
 }
