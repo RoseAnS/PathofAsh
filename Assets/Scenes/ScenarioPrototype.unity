@@ -875,6 +875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioStartButton: {fileID: 367864915}
+  scenarios:
+  - {fileID: 1963668292}
   scenarioMainPanel: {fileID: 3833332426886722341}
   scenarioCompletorPanel: {fileID: 3721894360994481758}
   scenarioCharacterPanel: {fileID: 8292012884305443896}
