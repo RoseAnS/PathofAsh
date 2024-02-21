@@ -10,6 +10,9 @@ public class ScenarioController : MonoBehaviour
 {
     [SerializeField] private GameObject scenarioStartButton;
 
+    [Header("Scenario List")]
+    [SerializeField] private GameObject[] scenarios;
+
     [Header("UI Panel")]
     [SerializeField] private GameObject scenarioMainPanel;
     [SerializeField] private GameObject scenarioCompletorPanel;
@@ -74,12 +77,12 @@ public class ScenarioController : MonoBehaviour
     // ->  scenario traits
     private string scenarioDifficulity;
     private int scenarioDC;
+    private GameObject scenarioInfoScript;
 
     private void Start()
     {
         scenarioStartButton.SetActive(true);
         ScenarioReset();
-
     }
 
     private void Update()
@@ -95,6 +98,7 @@ public class ScenarioController : MonoBehaviour
             goButtonText.text = "Select characters";
         }
     }
+
     private void ScenarioReset() //resets the scenario back to default 
     {
         scenarioMainPanel.SetActive(false);
@@ -355,6 +359,11 @@ public class ScenarioController : MonoBehaviour
  
     private void GetScenario() //gets the scenario info from currently fed in script (NOT IMPLIMENTED YET, PLACEHOLDER)
     {
+        GameObject selectedScenario = scenarios[0];
+        //gameControllerScript = GameObject.FindGameObjectWithTag("GameCOntroller").GetComponent<GameController>();
+
+
+
         scenarioDifficulity = "moderate";
         SetDifficulty();
     }

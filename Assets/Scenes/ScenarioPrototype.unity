@@ -897,14 +897,14 @@ MonoBehaviour:
   charSpikeButton: {fileID: 361882753418830045}
   charFlowerpotButton: {fileID: 5452580892692223728}
   scenarioGoButton: {fileID: 7546716810580011635}
-  charImage1Blank: {fileID: 1705056270}
-  charImage2Blank: {fileID: 2020701041}
-  charImage1Box: {fileID: 8134547267571008685}
-  charImage1Spike: {fileID: 486459117}
-  charImage1Flowerpot: {fileID: 1692482797}
-  charImage2Box: {fileID: 1962053445}
-  charImage2Spike: {fileID: 1782889116}
-  charImage2Flowerpot: {fileID: 1616057985}
+  charImage1Blank: {fileID: 0}
+  charImage2Blank: {fileID: 0}
+  charImage1Box: {fileID: 0}
+  charImage1Spike: {fileID: 0}
+  charImage1Flowerpot: {fileID: 0}
+  charImage2Box: {fileID: 0}
+  charImage2Spike: {fileID: 0}
+  charImage2Flowerpot: {fileID: 0}
   char1Holder: 
   char2Holder: 
 --- !u!1 &929033814
@@ -1005,6 +1005,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 857804200}
+  - {fileID: 1884993528}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1394673231
@@ -1440,6 +1441,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782889116}
   m_CullTransparentMesh: 1
+--- !u!1 &1884993527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884993528}
+  m_Layer: 0
+  m_Name: ScenarioList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1884993528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884993527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1963668293}
+  m_Father: {fileID: 1110977085}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1962053445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1548,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962053445}
   m_CullTransparentMesh: 1
+--- !u!1 &1963668292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963668293}
+  - component: {fileID: 1963668294}
+  m_Layer: 0
+  m_Name: TestScenario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1963668293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963668292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1884993528}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1963668294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963668292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aafd04505295f94f8fccafe9573e6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarioTitle: The Bunnies and the Bomb
+  scenarioDescription: "A beautiful meadow dotted with oak trees has sprung up in
+    the remains of an old playground. Fluffy rabbits dart around the field, absent
+    mindly chewing grass and going in and out of their burrows. However, in the centre
+    of the meadow, an unexploded black missile sticks out the ground, and it just
+    started ticking\u2026"
+  scenarioAttributes:
+  - Speed
+  - Tech
+  - Soul
+  scenarioInkStory: {fileID: 0}
+  scenarioDiceChecks: 
 --- !u!1 &2020701041
 GameObject:
   m_ObjectHideFlags: 0
