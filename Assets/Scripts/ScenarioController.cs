@@ -77,7 +77,7 @@ public class ScenarioController : MonoBehaviour
     // ->  scenario traits
     private string scenarioDifficulity;
     private int scenarioDC;
-    private GameObject scenarioInfoScript;
+    private ScenarioInfo selectedScenarioScript;
 
     private void Start()
     {
@@ -360,20 +360,28 @@ public class ScenarioController : MonoBehaviour
     private void GetScenario() //gets the scenario info from currently fed in script (NOT IMPLIMENTED YET, PLACEHOLDER)
     {
         GameObject selectedScenario = scenarios[0];
-        //gameControllerScript = GameObject.FindGameObjectWithTag("GameCOntroller").GetComponent<GameController>();
+        selectedScenarioScript = selectedScenario.GetComponent<ScenarioInfo>();
+
+        FillScenario();
+
+        
 
 
-
-        scenarioDifficulity = "moderate";
-        SetDifficulty();
+        //scenarioDifficulity = "moderate";
+        //SetDifficulty();
     }
-
-    private void SetDifficulty()
+    private void FillScenario()
     {
-        if(scenarioDifficulity == "moderate")
-        {
-            scenarioDC = 6;
-        }
-        //need to add in other difficulties
+        scenarioTitleText.text = selectedScenarioScript.scenarioTitle;
+        scenarioBodyText.text = selectedScenarioScript.scenarioDescription;
     }
+
+  //  private void SetDifficulty()
+  //  {
+   //     if(scenarioDifficulity == "moderate")
+     //   {
+    //        scenarioDC = 6;
+    //    }
+        //need to add in other difficulties
+  //  }
 }
