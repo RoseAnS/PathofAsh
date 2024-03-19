@@ -1,0 +1,9 @@
+Once upon a time...
+...there was a tale that made no sense...
+...some would say it merely existed to test...
+
+ * There were two choices.
+ * There were four lines of content.
+
+- They lived happily ever after.
+    -> END
