@@ -10,12 +10,7 @@ using UnityEngine.UI;
 public class ScenarioMaster : MonoBehaviour
 
 {
-    GameController gameControllerScript;
 
-
-    [Header("Ink Story Holders")]
-    [SerializeField] private TextAsset scenarioOne;
-    [SerializeField] private TextAsset scenarioTwo;
 
     [Header("Options")]
     [SerializeField] private GameObject[] choices;
@@ -34,15 +29,20 @@ public class ScenarioMaster : MonoBehaviour
 
     private Story currentScenario; //keeping it open for now but will close later and have this be fed in by another script
 
-    private bool workAround;
     private bool dialogueIsPlaying;
 
 
-
+    private void Awake()
+    {
+        if (instance != null) //warns if there is ever more than one of a dialogue manager
+        {
+            Debug.LogWarning("Multiple of these, which is bad apparently.");
+        }
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        gameControllerScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //Gets all the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -52,7 +52,6 @@ public class ScenarioMaster : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
-        workAround = false;
     }
 
     // Update is called once per frame
@@ -113,22 +112,9 @@ public class ScenarioMaster : MonoBehaviour
     }
     private void ContinueStory()
     {
-        if (workAround == false)
+        if (currentScenario.canContinue) //add checks for tags here before displaying the next text
         {
-            currentScenario.Continue();
-            workAround = true;
-            ContinueStory();
-        }
-        else if (workAround == true)
-        {
-            if (currentScenario.canContinue) //add checks for tags here before displaying the next text
-            {
-                scenarioText.text = currentScenario.Continue();
-
-
-
-
-            }
+            scenarioText.text = currentScenario.Continue();
         }
     }
 
