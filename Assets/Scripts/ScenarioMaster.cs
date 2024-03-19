@@ -115,6 +115,7 @@ public class ScenarioMaster : MonoBehaviour
         if (currentScenario.canContinue) //add checks for tags here before displaying the next text
         {
             scenarioText.text = currentScenario.Continue();
+            DisplayChoices();
         }
     }
 
