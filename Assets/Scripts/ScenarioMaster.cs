@@ -15,8 +15,9 @@ public class ScenarioMaster : MonoBehaviour
     [Header("Options")]
     [SerializeField] private GameObject[] choices;
 
-    [Header("UI Text")]
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI scenarioText;
+    [SerializeField] private ScrollRect scrollView;
 
     private static ScenarioMaster instance; //does this thing part 1
 
@@ -116,7 +117,17 @@ public class ScenarioMaster : MonoBehaviour
         {
             scenarioText.text = scenarioText.text + currentScenario.Continue();
             DisplayChoices();
+            StartCoroutine(ForceScrollDown()); //starts the autoscroller
         }
+    }
+
+    IEnumerator ForceScrollDown()
+    {
+        // Wait for end of frame AND force update all canvases before setting to bottom.
+        yield return new WaitForEndOfFrame();
+        Canvas.ForceUpdateCanvases();
+        scrollView.verticalNormalizedPosition = 0f;
+        Canvas.ForceUpdateCanvases();
     }
 
     public void MakeChoice(int choiceIndex) //makes the choice based on the button pressed
