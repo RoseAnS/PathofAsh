@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PopupPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextMeshProUGUI description; 
+
+
+   private static PopupPanel instance;
+
+    private void Awake()
     {
-        
+        instance = this;
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void Show(RootData rootData)
     {
-        
+        instance.title.text = rootData.Title;
+        instance.description.text = rootData.Description;
+        instance.gameObject.SetActive(true);
     }
 }

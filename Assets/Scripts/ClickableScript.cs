@@ -19,7 +19,7 @@ public class ClickableScript : MonoBehaviour, IPointerClickHandler
 
                 var rootData = FindObjectOfType<RootDataController>().Get(linkId);
 
-               // PopupPanel.Show(rootData);
+               PopupPanel.Show(rootData);
             }
         }
     }
