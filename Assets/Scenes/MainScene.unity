@@ -204,8 +204,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -660,8 +660,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1206,6 +1206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f864fac7058e45c41b6c358368f436e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 275102523}
+  description: {fileID: 314745916}
 --- !u!1 &833249010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,7 +1606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebeac8bf222c044291b858d64257b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarioOne: {fileID: 4900000, guid: 2b46771fbf6019141b6da71b87e750da, type: 3}
+  scenarioOne: {fileID: 4900000, guid: c1c511dd66aa1a543992efb6fcfdf074, type: 3}
 --- !u!1 &1255653320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,8 +1965,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2292,8 +2294,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2557,9 +2559,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roots:
   - Key: testTest
-    Title: This is a test
-    Description: Oh, what is this? My my you are looking into the roots of my soul?
-      Not much to find here i'm afraid, just old dust and the such.
+    Title: A pause
+    Description: 'Pride fills his heart and he leads his two sons towards the bank.
+      Its the first time he''s ever taken the two of them out by himself. A bright
+      day. A happy day.  ---  "Dad. You can''t just shut down. You need to be a person
+      again."  He sits in silence.  "Dad! We need you! Terra needs you! I need you! 
+      He sits in silence.  "Fine. We''ll do it without you."  He sits in silence.  '
 --- !u!1 &2048982479
 GameObject:
   m_ObjectHideFlags: 0
