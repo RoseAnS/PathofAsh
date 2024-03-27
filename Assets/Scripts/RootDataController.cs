@@ -20,6 +20,7 @@ public class RootDataController : MonoBehaviour
 public struct RootData
 {
     public string Key;
+    public string Check;
     public string Title;
     public string Description;
 }
