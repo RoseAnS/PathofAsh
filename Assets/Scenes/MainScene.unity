@@ -2559,6 +2559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roots:
   - Key: testTest
+    Check: boxOne
     Title: A pause
     Description: 'Pride fills his heart and he leads his two sons towards the bank.
       Its the first time he''s ever taken the two of them out by himself. A bright

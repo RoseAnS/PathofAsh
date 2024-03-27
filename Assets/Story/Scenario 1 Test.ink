@@ -1,3 +1,7 @@
+VAR boxPass = false
+VAR flowerPass = false
+VAR spikePass = false
+
 
 ???
 A! Uha avr er? 

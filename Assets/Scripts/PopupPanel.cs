@@ -7,7 +7,8 @@ using TMPro;
 public class PopupPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI title;
-    [SerializeField] private TextMeshProUGUI description; 
+    [SerializeField] private TextMeshProUGUI description;
+
 
 
    private static PopupPanel instance;
@@ -23,5 +24,7 @@ public class PopupPanel : MonoBehaviour
         instance.title.text = rootData.Title;
         instance.description.text = rootData.Description;
         instance.gameObject.SetActive(true);
+        
     }
+
 }

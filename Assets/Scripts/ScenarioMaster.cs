@@ -139,4 +139,12 @@ public class ScenarioMaster : MonoBehaviour
         //makes sure the story continues and keeps going, deleting the options etc etc
         DisplayChoices();
     }
+
+    public void InkCheckTracker(bool boxCheck, bool flowerCheck, bool spikeCheck)
+    {
+        currentScenario.variablesState["boxPass"] = boxCheck;
+        currentScenario.variablesState["flowerPass"] = flowerCheck;
+        currentScenario.variablesState["spikePass"] = spikeCheck;
+    }
+
 }
