@@ -2831,6 +2831,7 @@ MonoBehaviour:
   boxHolder: {fileID: 1355324511}
   flowerHolder: {fileID: 1183758153}
   spikeHolder: {fileID: 2085438372}
+  dialogueOutputLocation: 
 --- !u!1 &1615916767
 GameObject:
   m_ObjectHideFlags: 0
