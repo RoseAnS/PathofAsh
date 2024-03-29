@@ -35,7 +35,8 @@ public class ClickableScript : MonoBehaviour, IPointerClickHandler
                 var linkInfo = text.textInfo.linkInfo[linkIndex];
                 var linkId = linkInfo.GetLinkID();
 
-                var rootData = FindObjectOfType<RootDataController>().Get(linkId);
+                var rootData = FindAnyObjectByType<RootDataController>().Get(linkId);
+
 
                PopupPanel.Show(rootData);
                 Checker(rootData);
