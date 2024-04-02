@@ -2831,7 +2831,9 @@ MonoBehaviour:
   boxHolder: {fileID: 1846328395}
   flowerHolder: {fileID: 754214402}
   spikeHolder: {fileID: 122150492}
-  dialogueOutputLocation: 
+  nextSpeaker: 
+  lastSpeaker: 
+  delay: 3
 --- !u!1 &1615916767
 GameObject:
   m_ObjectHideFlags: 0
