@@ -28,6 +28,11 @@ public class DialogueController : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
 
 
+    void Start()
+    {
+        DisableDialogue();
+    }
+
     private void Awake()
     {
         if (instance != null) //warns if there is ever more than one of a dialogue manager
@@ -70,6 +75,7 @@ public class DialogueController : MonoBehaviour
         if (currentConvo.canContinue) //add checks for tags here before displaying the next text
         {
             HandleTags(currentConvo.currentTags);
+            EnableDialogue(dialogueOutputLocation);
 
             if (dialogueOutputLocation == "Box")
             {
@@ -111,6 +117,29 @@ public class DialogueController : MonoBehaviour
                     Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
                     break;
             }
+        }
+    }
+    public void DisableDialogue()
+    {
+        boxHolder.SetActive(false);
+        flowerHolder.SetActive(false);
+        spikeHolder.SetActive(false);
+    }
+
+    private void EnableDialogue(string currentSpeaker)
+    {
+        DisableDialogue();
+        if (currentSpeaker == "Box")
+        {
+            boxHolder.SetActive(true);
+        }
+        else if (currentSpeaker == "Spike")
+        {
+            spikeHolder.SetActive(true);
+        }
+        else if (currentSpeaker == "Flower")
+        {
+            flowerHolder.SetActive(true);
         }
     }
 }
