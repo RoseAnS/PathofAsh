@@ -13,10 +13,12 @@ public class ScenarioMaster : MonoBehaviour
 
 
     [Header("Options")]
+    [SerializeField] private TextAsset selectedScenario;
+
     [SerializeField] private GameObject[] choices;
 
     [Header("UI")]
-    [SerializeField] private TextMeshProUGUI scenarioText;
+    [SerializeField] private GameObject[] scenarioTextObject;
     [SerializeField] private ScrollRect scrollView;
 
     private static ScenarioMaster instance; //does this thing part 1
@@ -24,11 +26,12 @@ public class ScenarioMaster : MonoBehaviour
 
 
     private TextMeshProUGUI[] choicesText; //keeps track of text in the choices
+    private TextMeshProUGUI[] scenarioText;
 
 
+    private int textBoxNumber;
 
-
-    private Story currentScenario; //keeping it open for now but will close later and have this be fed in by another script
+    private Story currentScenario; 
 
     private bool dialogueIsPlaying;
 
@@ -53,6 +56,8 @@ public class ScenarioMaster : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
+        scenarioText = new TextMeshProUGUI[scenarioTextObject.Length];
+        StartDialogue(selectedScenario);
     }
 
     // Update is called once per frame
@@ -77,7 +82,12 @@ public class ScenarioMaster : MonoBehaviour
     {
         currentScenario = new Story(inkJSON.text); //sets the current story
         dialogueIsPlaying = true; //makes sure we know dialogue is playing
-
+        int index = 0;
+        foreach (GameObject text in scenarioTextObject)
+        {
+            scenarioText[index] = text.GetComponent<TextMeshProUGUI>();
+            index++;
+        }
         ContinueStory();
 
     }
@@ -113,9 +123,13 @@ public class ScenarioMaster : MonoBehaviour
     }
     private void ContinueStory()
     {
+        int index = textBoxNumber;
         if (currentScenario.canContinue) //add checks for tags here before displaying the next text
         {
-            scenarioText.text = scenarioText.text + currentScenario.Continue();
+            scenarioTextObject[index].gameObject.SetActive(true);
+            scenarioText[index].text = currentScenario.Continue();
+            index++;
+            textBoxNumber++;
             DisplayChoices();
             StartCoroutine(ForceScrollDown()); //starts the autoscroller
         }
