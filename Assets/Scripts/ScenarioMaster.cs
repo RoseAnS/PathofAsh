@@ -85,6 +85,7 @@ public class ScenarioMaster : MonoBehaviour
         int index = 0;
         foreach (GameObject text in scenarioTextObject)
         {
+            scenarioTextObject[index].SetActive(false);
             scenarioText[index] = text.GetComponent<TextMeshProUGUI>();
             index++;
         }
