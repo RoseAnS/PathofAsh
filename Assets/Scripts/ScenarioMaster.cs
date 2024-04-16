@@ -56,6 +56,7 @@ public class ScenarioMaster : MonoBehaviour
 
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
+
         }
         scenarioText = new TextMeshProUGUI[scenarioTextObject.Length];
         StartDialogue(selectedScenario);
@@ -101,16 +102,16 @@ public class ScenarioMaster : MonoBehaviour
 
 
         //looping through all of the choice objects and displaying them according to the current choices in the ink story.
-        int index = 0;
+ 
 
         // enable and intialize the choices up to the amount of choices for this line of dialogue. 
         foreach (Choice choice in currentChoices)
         {
-            choices[index + choiceSetNumber].gameObject.SetActive(true);
-            choicesText[index + choiceSetNumber].text = choice.text;
-            index++;
+            choices[choiceSetNumber].gameObject.SetActive(true);
+            choicesText[choiceSetNumber].text = choice.text;
+            choiceSetNumber++;
         }
-        choiceSetNumber = choiceSetNumber + 2;
+
         // go through the remaining choices the UI supports and make sure they're hidden.
        // for (int i = index; i < choices.Length; i++)
        // {
@@ -143,8 +144,8 @@ public class ScenarioMaster : MonoBehaviour
 
     public void MakeChoice(int choiceIndex) //makes the choice based on the button pressed
     {
-        Debug.Log("this is" + (choiceIndex - choiceSetNumber));
-        currentScenario.ChooseChoiceIndex(choiceIndex - choiceSetNumber);
+        Debug.Log("this is" + (choiceIndex));
+        currentScenario.ChooseChoiceIndex(choiceIndex);
         currentScenario.Continue();
         ContinueStory();
         //makes sure the story continues and keeps going, deleting the options etc etc
