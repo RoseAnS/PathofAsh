@@ -30,6 +30,7 @@ public class ScenarioMaster : MonoBehaviour
 
 
     private int textBoxNumber;
+    private int choiceSetNumber;
 
     private Story currentScenario; 
 
@@ -98,12 +99,6 @@ public class ScenarioMaster : MonoBehaviour
 
         List<Choice> currentChoices = currentScenario.currentChoices; //returns list of choices if there are any
 
-        //defensive check (are you proud of me martin) to check choice numbers
-        if (currentChoices.Count > choices.Length)
-        {
-            Debug.LogError("More choices were given than the UI can support");
-        }
-
 
         //looping through all of the choice objects and displaying them according to the current choices in the ink story.
         int index = 0;
@@ -111,15 +106,16 @@ public class ScenarioMaster : MonoBehaviour
         // enable and intialize the choices up to the amount of choices for this line of dialogue. 
         foreach (Choice choice in currentChoices)
         {
-            choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
+            choices[index + choiceSetNumber].gameObject.SetActive(true);
+            choicesText[index + choiceSetNumber].text = choice.text;
             index++;
         }
+        choiceSetNumber = choiceSetNumber + 2;
         // go through the remaining choices the UI supports and make sure they're hidden.
-        for (int i = index; i < choices.Length; i++)
-        {
-            choices[i].gameObject.SetActive(false);
-        }
+       // for (int i = index; i < choices.Length; i++)
+       // {
+       //     choices[i].gameObject.SetActive(false);
+       // }
 
     }
     private void ContinueStory()
@@ -147,8 +143,8 @@ public class ScenarioMaster : MonoBehaviour
 
     public void MakeChoice(int choiceIndex) //makes the choice based on the button pressed
     {
-        Debug.Log("this is" + choiceIndex);
-        currentScenario.ChooseChoiceIndex(choiceIndex);
+        Debug.Log("this is" + (choiceIndex - choiceSetNumber));
+        currentScenario.ChooseChoiceIndex(choiceIndex - choiceSetNumber);
         currentScenario.Continue();
         ContinueStory();
         //makes sure the story continues and keeps going, deleting the options etc etc
