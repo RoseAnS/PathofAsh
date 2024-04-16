@@ -864,6 +864,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1373427916}
+        m_TargetAssemblyTypeName: ScenarioMaster, Assembly-CSharp
+        m_MethodName: DisableButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &143449849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2193,6 +2205,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1373427916}
+        m_TargetAssemblyTypeName: ScenarioMaster, Assembly-CSharp
+        m_MethodName: DisableButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &985938152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,10 +2518,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedScenario: {fileID: 4900000, guid: bcdd729dba9d62043ba9eaa660f82aa8, type: 3}
   choices:
-  - {fileID: 2035372761}
   - {fileID: 143449846}
-  - {fileID: 985938149}
+  - {fileID: 2035372761}
   - {fileID: 1730849818}
+  - {fileID: 985938149}
   scenarioTextObject:
   - {fileID: 341063668}
   - {fileID: 79154370}
@@ -3085,6 +3109,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1373427916}
+        m_TargetAssemblyTypeName: ScenarioMaster, Assembly-CSharp
+        m_MethodName: DisableButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3688,6 +3724,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1373427916}
+        m_TargetAssemblyTypeName: ScenarioMaster, Assembly-CSharp
+        m_MethodName: DisableButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

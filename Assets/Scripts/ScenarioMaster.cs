@@ -55,6 +55,7 @@ public class ScenarioMaster : MonoBehaviour
         {
 
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            choices[index].SetActive(false);
             index++;
 
         }
@@ -148,8 +149,11 @@ public class ScenarioMaster : MonoBehaviour
         currentScenario.ChooseChoiceIndex(choiceIndex);
         currentScenario.Continue();
         ContinueStory();
-        //makes sure the story continues and keeps going, deleting the options etc etc
         DisplayChoices();
+    }
+    public void DisableButton(int otherButtonNumber)
+    {
+        choices[otherButtonNumber].SetActive(false);
     }
 
     public void InkCheckTracker(bool boxCheck, bool flowerCheck, bool spikeCheck)
