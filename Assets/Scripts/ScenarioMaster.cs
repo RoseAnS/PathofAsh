@@ -17,6 +17,8 @@ public class ScenarioMaster : MonoBehaviour
 
     [SerializeField] private GameObject[] choices;
 
+    [SerializeField] private GameObject[] cameras;
+
     [Header("UI")]
     [SerializeField] private GameObject[] scenarioTextObject;
     [SerializeField] private ScrollRect scrollView;
@@ -36,6 +38,10 @@ public class ScenarioMaster : MonoBehaviour
 
     private bool dialogueIsPlaying;
 
+    private int camNumber;
+
+
+    private const string CAMERA_TAG = "camera";
 
     private void Awake()
     {
@@ -48,6 +54,14 @@ public class ScenarioMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int camIndex = 0;
+        foreach (GameObject camera in cameras)
+        {
+            cameras[camIndex].SetActive(false);
+            camIndex++;
+        }
+
+
         //Gets all the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -61,6 +75,8 @@ public class ScenarioMaster : MonoBehaviour
         }
         scenarioText = new TextMeshProUGUI[scenarioTextObject.Length];
         StartDialogue(selectedScenario);
+
+ 
     }
 
     // Update is called once per frame
@@ -92,6 +108,7 @@ public class ScenarioMaster : MonoBehaviour
             scenarioText[index] = text.GetComponent<TextMeshProUGUI>();
             index++;
         }
+        cameras[0].SetActive(true);
         ContinueStory();
 
     }
@@ -125,6 +142,7 @@ public class ScenarioMaster : MonoBehaviour
         int index = textBoxNumber;
         if (currentScenario.canContinue) //add checks for tags here before displaying the next text
         {
+            HandleTags(currentScenario.currentTags);
             scenarioTextObject[index].gameObject.SetActive(true);
             scenarioText[index].text = currentScenario.Continue();
             index++;
@@ -163,4 +181,35 @@ public class ScenarioMaster : MonoBehaviour
         currentScenario.variablesState["spikePass"] = spikeCheck;
     }
 
+    private void TransCamera()
+    {
+        camNumber++;
+        cameras[camNumber].SetActive(true);
+
+    }
+    private void HandleTags(List<string> currentTags)
+    {
+        Debug.Log(currentTags);
+        foreach (string tag in currentTags)
+        {
+            //parse the tag
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogWarning("WARNING. Tag could not be parsed");
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+            switch (tagKey)
+            {
+                case CAMERA_TAG:
+                    Debug.Log("camera=" + tagValue);
+                    TransCamera();
+                    break;
+                default:
+                    Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
+                    break;
+            }
+        }
+    }
 }

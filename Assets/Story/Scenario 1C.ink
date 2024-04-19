@@ -1,8 +1,7 @@
-A colony of woodlice skuttle out in panicked directions a spiked black boot slams into it with frustration.
-
+A colony of woodlice skuttle out in panicked directions a spiked black boot slams into it with frustration. #camera:move
 A flurry of a sharp sounds is flung out of his mouth, received with a grimace and a retort by hi shorter companion.
 
-The boot lifts as the figure thuds away from the other two and pushes towards the trees and away.
+The boot lifts as the figure thuds away from the other two and pushes towards the trees and away. #camera:move
 
 What do you feel?
 
@@ -32,7 +31,7 @@ With a scarred and dirtied hand, the larger figure gentle pats the back of the o
 
 With ruffle of a multi-coloured lab coat, the smaller figure shakes their head and walks away to the nearby pond. 
 
-As they approach, what do you feel?
+As they approach, what do you feel? 
 
 * Anxiety ->branch_2a
 * Unsure ->branch_2b
