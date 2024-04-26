@@ -13,25 +13,34 @@ public class ScenarioMaster : MonoBehaviour
 
 
     [Header("Options")]
+    [SerializeField] private TextAsset selectedScenario;
+
     [SerializeField] private GameObject[] choices;
 
+    [SerializeField] private GameObject[] cameras;
+
     [Header("UI")]
-    [SerializeField] private TextMeshProUGUI scenarioText;
-    [SerializeField] private ScrollRect scrollView;
+    [SerializeField] private GameObject[] scenarioTextObject;
 
     private static ScenarioMaster instance; //does this thing part 1
 
 
 
     private TextMeshProUGUI[] choicesText; //keeps track of text in the choices
+    private TextMeshProUGUI[] scenarioText;
 
 
+    private int textBoxNumber;
+    private int choiceSetNumber;
 
-
-    private Story currentScenario; //keeping it open for now but will close later and have this be fed in by another script
+    private Story currentScenario; 
 
     private bool dialogueIsPlaying;
 
+    private int camNumber;
+
+
+    private const string CAMERA_TAG = "camera";
 
     private void Awake()
     {
@@ -44,6 +53,14 @@ public class ScenarioMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int camIndex = 0;
+        foreach (GameObject camera in cameras)
+        {
+            cameras[camIndex].SetActive(false);
+            camIndex++;
+        }
+
+
         //Gets all the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -51,8 +68,14 @@ public class ScenarioMaster : MonoBehaviour
         {
 
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            choices[index].SetActive(false);
             index++;
+
         }
+        scenarioText = new TextMeshProUGUI[scenarioTextObject.Length];
+        StartDialogue(selectedScenario);
+
+ 
     }
 
     // Update is called once per frame
@@ -77,7 +100,14 @@ public class ScenarioMaster : MonoBehaviour
     {
         currentScenario = new Story(inkJSON.text); //sets the current story
         dialogueIsPlaying = true; //makes sure we know dialogue is playing
-
+        int index = 0;
+        foreach (GameObject text in scenarioTextObject)
+        {
+            scenarioTextObject[index].SetActive(false);
+            scenarioText[index] = text.GetComponent<TextMeshProUGUI>();
+            index++;
+        }
+        cameras[0].SetActive(true);
         ContinueStory();
 
     }
@@ -87,57 +117,46 @@ public class ScenarioMaster : MonoBehaviour
 
         List<Choice> currentChoices = currentScenario.currentChoices; //returns list of choices if there are any
 
-        //defensive check (are you proud of me martin) to check choice numbers
-        if (currentChoices.Count > choices.Length)
-        {
-            Debug.LogError("More choices were given than the UI can support");
-        }
-
 
         //looping through all of the choice objects and displaying them according to the current choices in the ink story.
-        int index = 0;
+ 
 
         // enable and intialize the choices up to the amount of choices for this line of dialogue. 
         foreach (Choice choice in currentChoices)
         {
-            choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
-            index++;
+            choices[choiceSetNumber].gameObject.SetActive(true);
+            choicesText[choiceSetNumber].text = choice.text;
+            choiceSetNumber++;
         }
-        // go through the remaining choices the UI supports and make sure they're hidden.
-        for (int i = index; i < choices.Length; i++)
-        {
-            choices[i].gameObject.SetActive(false);
-        }
+
 
     }
     private void ContinueStory()
     {
+        int index = textBoxNumber;
         if (currentScenario.canContinue) //add checks for tags here before displaying the next text
         {
-            scenarioText.text = scenarioText.text + currentScenario.Continue();
+            HandleTags(currentScenario.currentTags);
+            scenarioTextObject[index].gameObject.SetActive(true);
+            scenarioText[index].text = currentScenario.Continue();
+            index++;
+            textBoxNumber++;
             DisplayChoices();
-            StartCoroutine(ForceScrollDown()); //starts the autoscroller
         }
     }
 
-    IEnumerator ForceScrollDown()
-    {
-        // Wait for end of frame AND force update all canvases before setting to bottom.
-        yield return new WaitForEndOfFrame();
-        Canvas.ForceUpdateCanvases();
-        scrollView.verticalNormalizedPosition = 0f;
-        Canvas.ForceUpdateCanvases();
-    }
 
     public void MakeChoice(int choiceIndex) //makes the choice based on the button pressed
     {
-        Debug.Log("this is" + choiceIndex);
+        Debug.Log("this is" + (choiceIndex));
         currentScenario.ChooseChoiceIndex(choiceIndex);
         currentScenario.Continue();
         ContinueStory();
-        //makes sure the story continues and keeps going, deleting the options etc etc
         DisplayChoices();
+    }
+    public void DisableButton(int otherButtonNumber)
+    {
+        choices[otherButtonNumber].SetActive(false);
     }
 
     public void InkCheckTracker(bool boxCheck, bool flowerCheck, bool spikeCheck)
@@ -147,4 +166,35 @@ public class ScenarioMaster : MonoBehaviour
         currentScenario.variablesState["spikePass"] = spikeCheck;
     }
 
+    private void TransCamera()
+    {
+        camNumber++;
+        cameras[camNumber].SetActive(true);
+
+    }
+    private void HandleTags(List<string> currentTags)
+    {
+        Debug.Log(currentTags);
+        foreach (string tag in currentTags)
+        {
+            //parse the tag
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogWarning("WARNING. Tag could not be parsed");
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+            switch (tagKey)
+            {
+                case CAMERA_TAG:
+                    Debug.Log("camera=" + tagValue);
+                    TransCamera();
+                    break;
+                default:
+                    Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
+                    break;
+            }
+        }
+    }
 }

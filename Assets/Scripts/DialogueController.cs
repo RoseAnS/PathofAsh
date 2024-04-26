@@ -91,6 +91,7 @@ public class DialogueController : MonoBehaviour
     }
     private void HandleTags(List<string> currentTags)
     {
+
         foreach (string tag in currentTags)
         {
             //parse the tag
