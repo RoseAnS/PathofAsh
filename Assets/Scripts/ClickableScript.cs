@@ -26,7 +26,7 @@ public class ClickableScript : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("you have been clicked");
+
         var text = GetComponent<TextMeshProUGUI>();
         if (eventData.button == PointerEventData.InputButton.Left)
         {

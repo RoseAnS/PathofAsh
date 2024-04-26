@@ -48,7 +48,7 @@ public class PopupPanel : MonoBehaviour
     {
         if (currentScenario.canContinue) //add checks for tags here before displaying the next text
         {
-            scenarioText.text = currentScenario.Continue();
+            scenarioText.text = scenarioText.text + currentScenario.Continue();
             StartCoroutine(ForceScrollDown()); //starts the autoscroller
         }
     }
