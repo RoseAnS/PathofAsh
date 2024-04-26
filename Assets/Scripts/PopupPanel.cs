@@ -32,9 +32,9 @@ public class PopupPanel : MonoBehaviour
 
     public void OpenPanel()
     {
-        Debug.Log("you have been clicked");
-        StartDialogue(selectedMemory);
         gameObject.SetActive(true);
+        StartDialogue(selectedMemory);
+
     }
 
     void Update()

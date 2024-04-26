@@ -1,4 +1,4 @@
-A colony of woodlice <link=testTest><color=green>skuttle</color></link> out in panicked directions a spiked black boot slams into it with frustration. #camera:move
+A colony of woodlice <link=testTest><color=green>skuttle</color></link> out in panicked directions a spiked black boot slams into it with frustration. 
 A flurry of a sharp sounds is flung out of his mouth, received with a grimace and a retort by hi shorter companion.
 
 The boot lifts as the figure thuds away from the other two and pushes towards the trees and away. #camera:move
