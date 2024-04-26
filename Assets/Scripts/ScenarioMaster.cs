@@ -21,7 +21,6 @@ public class ScenarioMaster : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject[] scenarioTextObject;
-    [SerializeField] private ScrollRect scrollView;
 
     private static ScenarioMaster instance; //does this thing part 1
 
@@ -130,11 +129,6 @@ public class ScenarioMaster : MonoBehaviour
             choiceSetNumber++;
         }
 
-        // go through the remaining choices the UI supports and make sure they're hidden.
-       // for (int i = index; i < choices.Length; i++)
-       // {
-       //     choices[i].gameObject.SetActive(false);
-       // }
 
     }
     private void ContinueStory()
@@ -148,18 +142,9 @@ public class ScenarioMaster : MonoBehaviour
             index++;
             textBoxNumber++;
             DisplayChoices();
-            StartCoroutine(ForceScrollDown()); //starts the autoscroller
         }
     }
 
-    IEnumerator ForceScrollDown()
-    {
-        // Wait for end of frame AND force update all canvases before setting to bottom.
-        yield return new WaitForEndOfFrame();
-        Canvas.ForceUpdateCanvases();
-        scrollView.verticalNormalizedPosition = 0f;
-        Canvas.ForceUpdateCanvases();
-    }
 
     public void MakeChoice(int choiceIndex) //makes the choice based on the button pressed
     {
