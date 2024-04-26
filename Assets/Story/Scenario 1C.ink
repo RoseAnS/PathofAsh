@@ -1,4 +1,4 @@
-A colony of woodlice skuttle out in panicked directions a spiked black boot slams into it with frustration. #camera:move
+A colony of woodlice <link=testTest><color=green>skuttle</color></link> out in panicked directions a spiked black boot slams into it with frustration. #camera:move
 A flurry of a sharp sounds is flung out of his mouth, received with a grimace and a retort by hi shorter companion.
 
 The boot lifts as the figure thuds away from the other two and pushes towards the trees and away. #camera:move
@@ -26,6 +26,7 @@ But even as the prey shrink away, a fox not so far from here smells the air. The
 -> branch_1hub
 === branch_1hub ===
 And then there were two remaining in the clearing. The smaller one who had shouted after the fleeing figure lets out and deep sigh and begins fighting with beads of a bracelet.
+ 
 
 With a scarred and dirtied hand, the larger figure gentle pats the back of the other and lets out a comforting growl of syllables. 
 
