@@ -26,6 +26,7 @@ public class ClickableScript : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+
         var text = GetComponent<TextMeshProUGUI>();
         if (eventData.button == PointerEventData.InputButton.Left)
         {
@@ -38,7 +39,7 @@ public class ClickableScript : MonoBehaviour, IPointerClickHandler
                 var rootData = FindAnyObjectByType<RootDataController>().Get(linkId);
 
 
-               PopupPanel.Show(rootData);
+                PopupPanel.GetInstance().OpenPanel();
                 Checker(rootData);
             }
         }
