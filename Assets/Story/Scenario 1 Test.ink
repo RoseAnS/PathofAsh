@@ -1,6 +1,4 @@
-VAR boxPass = false
-VAR flowerPass = false
-VAR spikePass = false
+
 
 
 ???

@@ -6,6 +6,7 @@ using TMPro;
 using Ink.Runtime;
 using System.Runtime.CompilerServices;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScenarioMaster : MonoBehaviour
 
@@ -14,6 +15,7 @@ public class ScenarioMaster : MonoBehaviour
 
     [Header("Options")]
     [SerializeField] private TextAsset selectedScenario;
+    [SerializeField] private string nextScene;
 
     [SerializeField] private GameObject[] choices;
 
@@ -143,6 +145,10 @@ public class ScenarioMaster : MonoBehaviour
             textBoxNumber++;
             DisplayChoices();
         }
+        else
+        {
+            NextScene();
+        }
     }
 
 
@@ -196,5 +202,9 @@ public class ScenarioMaster : MonoBehaviour
                     break;
             }
         }
+    }
+    private void NextScene()
+    {
+        SceneManager.LoadScene(sceneName: nextScene);
     }
 }

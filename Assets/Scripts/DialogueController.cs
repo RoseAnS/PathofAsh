@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using System.Runtime.CompilerServices;
+using UnityEngine.SceneManagement;
 
 public class DialogueController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class DialogueController : MonoBehaviour
 
     [Header("Dialogue Settings")]
     [SerializeField] private float delay;
+    [SerializeField] private string nextScene;
 
 
     private Story currentConvo;
@@ -107,6 +109,10 @@ public class DialogueController : MonoBehaviour
             {
                     Debug.LogWarning("WARNING. The previous line was untagged and therefore a speaker cannot be assigned.");
             }
+        }
+        else
+        {
+            NextScene();
         }
     }
     private void HandleTags(List<string> currentTags)
@@ -240,5 +246,10 @@ public class DialogueController : MonoBehaviour
             flowerHolder.SetActive(true);
             lastSpeaker = currentSpeaker;
         }
+    }
+
+    private void NextScene()
+    {
+        SceneManager.LoadScene(sceneName: nextScene);
     }
 }
