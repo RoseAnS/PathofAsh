@@ -20,13 +20,27 @@ public class DialogueController : MonoBehaviour
 
 
     [Header("Convo Info")]
-    [SerializeField] private string dialogueOutputLocation;
+    [SerializeField] private string nextSpeaker;
+    [SerializeField] private string lastSpeaker;
+
+    [Header("Dialogue Settings")]
+    [SerializeField] private float delay;
+
 
     private Story currentConvo;
     private bool dialogueIsPlaying;
+    private bool timerEnabled;
+    private float timer;
+
 
     private const string SPEAKER_TAG = "speaker";
 
+
+    void Start()
+    {
+        DisableDialogue(string.Empty, string.Empty);
+        timerEnabled = false;
+    }
 
     private void Awake()
     {
@@ -43,6 +57,12 @@ public class DialogueController : MonoBehaviour
         {
             return;
         }
+
+        if (timerEnabled)
+        {
+            timer += Time.deltaTime;
+        }
+
         // handles getting to the next line of dialogue when submit is pressed. However we will need to mess with this because we are having 4 separate ways of displaying dialogue and may only want to press submit for some of them. 
         if (Input.GetButtonDown("Submit"))
         {
@@ -56,7 +76,6 @@ public class DialogueController : MonoBehaviour
         dialogueIsPlaying = true; //makes sure we know dialogue is playing
 
         currentConvo.Continue(); //skips the first line making sure that the tags there are ready to be read
-        ContinueStory();
 
     }
 
@@ -70,16 +89,17 @@ public class DialogueController : MonoBehaviour
         if (currentConvo.canContinue) //add checks for tags here before displaying the next text
         {
             HandleTags(currentConvo.currentTags);
+            EnableDialogue(nextSpeaker);
 
-            if (dialogueOutputLocation == "Box")
+            if (nextSpeaker == "Box")
             {
                     boxText.text = currentConvo.Continue();
             }
-            else if (dialogueOutputLocation == "Spike")
+            else if (nextSpeaker == "Spike")
             {
                     spikeText.text = currentConvo.Continue();
             }
-            else if (dialogueOutputLocation == "Flower")
+            else if (nextSpeaker == "Flower")
             {
                     flowerText.text = currentConvo.Continue();
             }
@@ -91,6 +111,7 @@ public class DialogueController : MonoBehaviour
     }
     private void HandleTags(List<string> currentTags)
     {
+
         foreach (string tag in currentTags)
         {
             //parse the tag
@@ -105,12 +126,119 @@ public class DialogueController : MonoBehaviour
             {
                 case SPEAKER_TAG:
                     Debug.Log("speaker=" + tagValue);
-                    dialogueOutputLocation = tagValue;
+                    nextSpeaker = tagValue;
                     break;
                 default:
                     Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
                     break;
             }
+        }
+    }
+    public void DisableDialogue(string currentSpeaker, string delaySpeaker)
+    {
+        timerEnabled = true;
+        if(currentSpeaker == "Box") // this is probably WAY longer and more complicated than it needs to be but it works. Disables last speaker set by a delay in the editor
+        {
+            if (delaySpeaker == "Spike")
+            {
+                flowerHolder.SetActive(false);
+                if(timer > delay)
+                {
+                    spikeHolder.SetActive(false);
+                }
+            }
+            else if (delaySpeaker == "Flower")
+            {
+                spikeHolder.SetActive(false);
+                if (timer > delay)
+                {
+                    flowerHolder.SetActive(false);
+                }
+            }
+            else if (delaySpeaker == "Box")
+            {
+                flowerHolder.SetActive(false);
+                spikeHolder.SetActive(false);
+            }
+            timerEnabled = false;
+        }
+        else if (currentSpeaker == "Spike")
+        {
+            if (delaySpeaker == "Box")
+            {
+                flowerHolder.SetActive(false);
+                if (timer > delay)
+                {
+                    boxHolder.SetActive(false);
+                }
+            }
+            else if (delaySpeaker == "Flower")
+            {
+                boxHolder.SetActive(false);
+                if (timer > delay)
+                {
+                    flowerHolder.SetActive(false);
+                }
+            }
+            else if (delaySpeaker == "Spike")
+            {
+                flowerHolder.SetActive(false);
+                boxHolder.SetActive(false);
+            }
+            timerEnabled = false;
+        }
+        else if (currentSpeaker == "Flower")
+        {
+            if (delaySpeaker == "Box")
+            {
+                spikeHolder.SetActive(false);
+                if (timer > delay)
+                {
+                    boxHolder.SetActive(false);
+                }
+            }
+            else if (delaySpeaker == "Spike")
+            {
+                boxHolder.SetActive(false);
+                if (timer > delay)
+                {
+                    spikeHolder.SetActive(false);
+                }
+            }
+            else if (delaySpeaker == "Flower")
+            {
+                spikeHolder.SetActive(false);
+                boxHolder.SetActive(false);
+            }
+            timerEnabled = false;
+        }
+        else
+        {
+            timerEnabled = false;
+            boxHolder.SetActive(false);
+            flowerHolder.SetActive(false);
+            spikeHolder.SetActive(false);
+        }
+
+    }
+
+    private void EnableDialogue(string currentSpeaker)
+    {
+        DisableDialogue(currentSpeaker, lastSpeaker);
+        if (currentSpeaker == "Box")
+        {
+            boxHolder.SetActive(true);
+            lastSpeaker = currentSpeaker;
+        }
+        else if (currentSpeaker == "Spike")
+        {
+            spikeHolder.SetActive(true);
+            lastSpeaker = currentSpeaker;
+        }
+        else if (currentSpeaker == "Flower")
+        {
+            flowerHolder.SetActive(true);
+            lastSpeaker = currentSpeaker;
         }
     }
 }
