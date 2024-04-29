@@ -41,6 +41,8 @@ public class ScenarioMaster : MonoBehaviour
 
     private int camNumber;
 
+    private bool pause;
+
 
     private const string CAMERA_TAG = "camera";
 
@@ -88,10 +90,15 @@ public class ScenarioMaster : MonoBehaviour
             return;
         }
         // handles getting to the next line of dialogue when submit is pressed. However we will need to mess with this because we are having 4 separate ways of displaying dialogue and may only want to press submit for some of them. 
-        if (Input.GetButtonDown("Submit"))
+
+        if (pause == false)
         {
-            ContinueStory();
+            if (Input.GetButtonDown("Submit"))
+            {
+                ContinueStory();
+            }
         }
+
     }
     public static ScenarioMaster GetInstance() //does the thing part two
     {
@@ -206,5 +213,18 @@ public class ScenarioMaster : MonoBehaviour
     private void NextScene()
     {
         SceneManager.LoadScene(sceneName: nextScene);
+    }
+
+    public void Pause()
+    {
+        if (pause != false)
+        {
+            pause = true;
+        }
+        else if (pause == true)
+        {
+            pause = false;
+        }
+
     }
 }
