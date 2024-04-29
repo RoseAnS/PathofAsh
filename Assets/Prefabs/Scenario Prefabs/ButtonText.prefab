@@ -70,8 +70,8 @@ MonoBehaviour:
   m_text: A colony of woodlice skuttle out in panicked directions a spiked black
     boot slams into it with frustration.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c2efbe07bc4ae564188ac1f7d3f3edd1, type: 2}
+  m_sharedMaterial: {fileID: 8948063295187192024, guid: c2efbe07bc4ae564188ac1f7d3f3edd1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
