@@ -43,9 +43,12 @@ public class ScenarioMaster : MonoBehaviour
 
     private bool pause;
 
+    private bool end;
+
 
     private const string CAMERA_TAG = "camera";
     private const string PAUSE_TAG = "pause";
+    private const string END_TAG = "end";
 
     private void Awake()
     {
@@ -164,7 +167,6 @@ public class ScenarioMaster : MonoBehaviour
     {
         Debug.Log("this is" + (choiceIndex));
         currentScenario.ChooseChoiceIndex(choiceIndex);
-        currentScenario.Continue();
         ContinueStory();
         DisplayChoices();
     }
@@ -202,6 +204,9 @@ public class ScenarioMaster : MonoBehaviour
                     Debug.Log("pause=" + tagValue);
                     Pause();
                     break;
+                case END_TAG:
+                    end = true;
+                    break;
                 default:
                     Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
                     break;
@@ -210,7 +215,11 @@ public class ScenarioMaster : MonoBehaviour
     }
     private void NextScene()
     {
-        SceneManager.LoadScene(sceneName: nextScene);
+        if (end == true)
+        {
+            SceneManager.LoadScene(sceneName: nextScene);
+        }
+
     }
 
     public void Pause()

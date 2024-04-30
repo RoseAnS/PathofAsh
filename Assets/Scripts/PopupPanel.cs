@@ -45,6 +45,7 @@ public class PopupPanel : MonoBehaviour
         }
         else if (clickNum == 2)
         {
+            clickNum = 0;
             NextMemory();
             OpenPanel();
         }    
