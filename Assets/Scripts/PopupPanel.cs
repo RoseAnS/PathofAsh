@@ -18,7 +18,7 @@ public class PopupPanel : MonoBehaviour
 
     private TextAsset selectedMemory;
     private int memNum;
-
+    private int clickNum;
     private Story currentScenario;
 
     private static PopupPanel instance;
@@ -34,6 +34,20 @@ public class PopupPanel : MonoBehaviour
         NextMemory();
         instance = this;
         gameObject.SetActive(false);
+        clickNum = 0;
+    }
+
+    public void Count()
+    {
+        if (clickNum < 2)
+        {
+            clickNum++;
+        }
+        else if (clickNum == 3)
+        {
+            OpenPanel();
+        }    
+
     }
 
     public void OpenPanel()
