@@ -172,13 +172,6 @@ public class ScenarioMaster : MonoBehaviour
         choices[otherButtonNumber].SetActive(false);
     }
 
-    public void InkCheckTracker(bool boxCheck, bool flowerCheck, bool spikeCheck)
-    {
-        currentScenario.variablesState["boxPass"] = boxCheck;
-        currentScenario.variablesState["flowerPass"] = flowerCheck;
-        currentScenario.variablesState["spikePass"] = spikeCheck;
-    }
-
     private void TransCamera()
     {
         camNumber++;

@@ -1,21 +1,21 @@
 As the woodpecker flies upstream, bored of the metallic crates it was pecking upon, a scruffy brown beaver methodically meanders its way through the water.
 The beaver is a hard worker, searching for fallen branches to build its dam, ready to raise its soon to be born young in the spring. 
 Pushing forward through thick reeds, it spots a thick branch, caught against a cluster of rocks.
-With an excited shake of its flat brown tail, it begins to paddle towards the branch. But a sudden splash causes it to rear back in surprise, as a knuckled hand of white skin yanks it from the water.
+With an excited shake of its flat brown tail, it begins to paddle towards the branch. But a sudden splash causes it to rear back in surprise, as a knuckled hand of white skin yanks it from the water.#camera:move
 How do you feel?
-* Annoyed -> branch_1a
-* Angry -> branch_1b
+* Annoyed #camera:move-> branch_1a
+* Angry #camera:move-> branch_1b
 
 === branch_1a ===
 Chittering with annoyance, the beaver looks up at the thief. The largest and oldest of the intruders to the forest, holding the branch up in one of his hands.
 A booming laugh bellows out from beneath his thick beard, causing the beaver to chatter its teeth in further annoyance. 
-Grinning, the figure leaps into the water, plunging his thick boots beneath the water as he begins to wade forward.
+Grinning, the figure leaps into the water, plunging his thick boots beneath the water as he begins to wade forward.#camera:move
 ->branch_1_join
 
 === branch_1b ===
 Flies resting on the nearby reads suddenly buzz up in anger, disturbed from their rest as the figure wades into the water.
 Flitting and darting about his head in a swarm, bumping against his weathered skin, he seems to not even notice as he makes his way forward.
-The reeds sway as he pushes through the water, making his way towards the beaver.
+The reeds sway as he pushes through the water, making his way towards the beaver.#camera:move
 -> branch_1_join
 
 === branch_1_join===
@@ -24,14 +24,14 @@ The reeds sway as he pushes through the water, making his way towards the beaver
 With a grunt, the figure snaps the long branch in half, and tosses half of it towards the beaver. 
 First surprised, then curious, the beaver cautiously leans forward towards the branch.
 Then with a snap, it grabs the branch in its teeth and waddles off at speed, causing another booming laugh to escape from the large figure. 
-Continuing onwards, the figure begins to wade through the river reeds further downstream.
+Continuing onwards, the figure begins to wade through the river reeds further downstream.#camera:move
 How do you feel?
-* Grateful ->branch_2a
-* Surprised ->branch_2b
+* Grateful#camera:move ->branch_2a
+* Surprised#camera:move ->branch_2b
 ===branch_2a===
 The wind blows across the stream, causing the thick forest of reeds to rustle in the breeze, parting just enough for the figure to see the shine of the crates downstream reflecting the afternoon sun. 
 Plunging his remaining half of the branch into the water as a guide, the figure makes his way forward.
-He continues forward, stumbling a little bit through the river, but careful not to flatten any of the reeds or to disturb the nearby kingfisher perched upon a tree. 
+He continues forward, stumbling a little bit through the river, but careful not to flatten any of the reeds or to disturb the nearby kingfisher perched upon a tree.
 
 ->branch_2_join
 
@@ -43,7 +43,7 @@ Various invertebrates, now revealed, scatter as eels dart in a feeding frenzy. A
 ->branch_2_join
 
 === branch_2_join ===
-The kingfisher watches the figure below as it wades over to the small metallic crates caught amongst the cluster of rocks.
+The kingfisher watches the figure below as it wades over to the small metallic crates caught amongst the cluster of rocks.#camera:move 
 Awkwardly bending down, the figure inspects the crates as the kingfisher stares on watching the furrow dig its way across the bearded mans brow. 
 For a moment, the man glances up catching sight of the blue kingfisher, holding the gaze for just a second, a puzzled expression crossing his face. 
 The kingfisher flies away and the man turns his gaze down again with a sigh. He begins his work. 
