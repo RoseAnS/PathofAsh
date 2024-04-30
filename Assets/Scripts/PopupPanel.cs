@@ -15,6 +15,7 @@ public class PopupPanel : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI scenarioText;
     [SerializeField] private ScrollRect scrollView;
+    [SerializeField] private GameObject popUpObject;
 
     private TextAsset selectedMemory;
     private int memNum;
@@ -31,9 +32,8 @@ public class PopupPanel : MonoBehaviour
     private void Awake()
     {
         memNum = 0;
-        NextMemory();
         instance = this;
-        gameObject.SetActive(false);
+        popUpObject.SetActive(false);
         clickNum = 0;
     }
 
@@ -43,8 +43,9 @@ public class PopupPanel : MonoBehaviour
         {
             clickNum++;
         }
-        else if (clickNum == 3)
+        else if (clickNum == 2)
         {
+            NextMemory();
             OpenPanel();
         }    
 
@@ -52,10 +53,8 @@ public class PopupPanel : MonoBehaviour
 
     public void OpenPanel()
     {
-        ScenarioMaster.GetInstance().Pause();
-        gameObject.SetActive(true);
-        StartDialogue(selectedMemory);
-
+        popUpObject.SetActive(true);
+        ContinueStory();
     }
 
     void Update()
@@ -77,7 +76,6 @@ public class PopupPanel : MonoBehaviour
     public void StartDialogue(TextAsset inkJSON) //Temp. This will start the dialogue but I will need to add if statesments within using Ink tags to decide where the dialogue actually goes.
     {
         currentScenario = new Story(inkJSON.text); //sets the current story
-        ContinueStory();
 
     }
     IEnumerator ForceScrollDown()
@@ -95,10 +93,12 @@ public class PopupPanel : MonoBehaviour
         {
             selectedMemory = memory1;
             memNum++;
+            StartDialogue(selectedMemory);
         }
         else if (memNum == 1)
         {
             selectedMemory = memory2;
+            scenarioText.text = null;
             memNum++;
         }
         else if (memNum == 2)

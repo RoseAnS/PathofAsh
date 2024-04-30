@@ -48,6 +48,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5163377157715650624}
     m_Modifications:
+    - target: {fileID: 1204044222653732373, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204044222653732373, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1293755254243546240, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -114,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293755254243546240, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -264
+      value: -286.6
       objectReference: {fileID: 0}
     - target: {fileID: 1293755254243546240, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -150,6 +158,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5163377157715650624}
     m_Modifications:
+    - target: {fileID: 1504579384254082185, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504579384254082185, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504579384254082185, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4376224859907024775, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
       propertyPath: m_Name
       value: ButtonText1
@@ -234,7 +254,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5121389747066419545, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -252,6 +273,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5163377157715650624}
     m_Modifications:
+    - target: {fileID: 1504579384254082185, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504579384254082185, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4376224859907024775, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
       propertyPath: m_Name
       value: ButtonText5
@@ -322,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7871358675954316483, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -94
+      value: -204.5
       objectReference: {fileID: 0}
     - target: {fileID: 7871358675954316483, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -336,7 +365,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5121389747066419545, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -354,6 +384,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5163377157715650624}
     m_Modifications:
+    - target: {fileID: 1204044222653732373, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204044222653732373, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1293755254243546240, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -420,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293755254243546240, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -137
+      value: -223.2
       objectReference: {fileID: 0}
     - target: {fileID: 1293755254243546240, guid: e4b2e4a74a7a6f242a0f25c4ff82db01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -456,6 +494,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5163377157715650624}
     m_Modifications:
+    - target: {fileID: 1504579384254082185, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504579384254082185, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4376224859907024775, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
       propertyPath: m_Name
       value: ButtonText3
@@ -526,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7871358675954316483, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -205
+      value: -267
       objectReference: {fileID: 0}
     - target: {fileID: 7871358675954316483, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -540,7 +586,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5121389747066419545, guid: 505d5d044ed902546a1bf6f8ec1fa076, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

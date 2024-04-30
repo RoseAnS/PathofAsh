@@ -45,6 +45,7 @@ public class ScenarioMaster : MonoBehaviour
 
 
     private const string CAMERA_TAG = "camera";
+    private const string PAUSE_TAG = "pause";
 
     private void Awake()
     {
@@ -140,7 +141,7 @@ public class ScenarioMaster : MonoBehaviour
 
 
     }
-    private void ContinueStory()
+    public void ContinueStory()
     {
         int index = textBoxNumber;
         if (currentScenario.canContinue) //add checks for tags here before displaying the next text
@@ -172,7 +173,7 @@ public class ScenarioMaster : MonoBehaviour
         choices[otherButtonNumber].SetActive(false);
     }
 
-    private void TransCamera()
+    public void TransCamera()
     {
         camNumber++;
         cameras[camNumber].SetActive(true);
@@ -196,6 +197,10 @@ public class ScenarioMaster : MonoBehaviour
                 case CAMERA_TAG:
                     Debug.Log("camera=" + tagValue);
                     TransCamera();
+                    break;
+                case PAUSE_TAG:
+                    Debug.Log("pause=" + tagValue);
+                    Pause();
                     break;
                 default:
                     Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
