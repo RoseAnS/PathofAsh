@@ -637,15 +637,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxText: {fileID: 2038542440122938443}
-  flowerText: {fileID: 0}
+  flowerText: {fileID: 2038542440122938443}
   spikeText: {fileID: 339439813}
   boxHolder: {fileID: 2038542440122938442}
-  flowerHolder: {fileID: 0}
+  flowerHolder: {fileID: 2038542440122938442}
   spikeHolder: {fileID: 339439811}
   nextSpeaker: 
   lastSpeaker: 
-  delay: 0
-  currentScene: {fileID: 0}
+  delay: 2
+  currentScene: {fileID: 4900000, guid: 9390b5f8e7b5f6946a2b192c20bb1216, type: 3}
   nextScene: 
 --- !u!4 &1653921532
 Transform:

@@ -61,5 +61,4 @@ Grasshoppers let out an indigent chirp as they jump out the way of the two soake
 Turning up for just a second, the bearded figure sees the blue kingfisher fly into the distance. 
 A warmth fills him that he cannot quite explain, but he lets out a laugh as the two of them stand dripping on the warm afternoon grass. 
 Now far from the forest, the kingfisher flies steady, leaving the only home it ever knew, the one where it grew old, making for unknown lands beyond the ash and ruin of the past.  
-(press space to coninue) #end:itall
 -> END
