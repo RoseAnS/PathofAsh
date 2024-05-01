@@ -2339,15 +2339,15 @@ PrefabInstance:
     - target: {fileID: 1165633182976051296, guid: c02ea594dca2ebd4cb590db1e62d6db5, type: 3}
       propertyPath: memory1
       value: 
-      objectReference: {fileID: 4900000, guid: c9b0d5abdece3b343a6cc5eb8cd1b112, type: 3}
+      objectReference: {fileID: 4900000, guid: fc9a46bb345c4584ab2e10ad8953cf5a, type: 3}
     - target: {fileID: 1165633182976051296, guid: c02ea594dca2ebd4cb590db1e62d6db5, type: 3}
       propertyPath: memory2
       value: 
-      objectReference: {fileID: 4900000, guid: c5d5c0c489923c34cb445af024283cc4, type: 3}
+      objectReference: {fileID: 4900000, guid: fc9a46bb345c4584ab2e10ad8953cf5a, type: 3}
     - target: {fileID: 1165633182976051296, guid: c02ea594dca2ebd4cb590db1e62d6db5, type: 3}
       propertyPath: memory3
       value: 
-      objectReference: {fileID: 4900000, guid: a740d13113a108c4a9808cc17b07b36f, type: 3}
+      objectReference: {fileID: 4900000, guid: fc9a46bb345c4584ab2e10ad8953cf5a, type: 3}
     - target: {fileID: 1165633182976051296, guid: c02ea594dca2ebd4cb590db1e62d6db5, type: 3}
       propertyPath: popUpObject
       value: 
