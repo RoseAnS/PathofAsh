@@ -8,14 +8,22 @@ using Ink.Runtime;
 public class PopupPanel : MonoBehaviour
 {
     [Header("Options")]
-    [SerializeField] private TextAsset selectedMemory;
+    [SerializeField] private TextAsset memory1;
+    [SerializeField] private TextAsset memory2;
+    [SerializeField] private TextAsset memory3;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI scenarioText;
     [SerializeField] private ScrollRect scrollView;
+    [SerializeField] private GameObject popUpObject;
 
+    private TextAsset selectedMemory;
+    public int memNum;
+    private int clickNum;
+    private Story memoryStory1;
+    private Story memoryStory2;
+    private Story memoryStory3;
 
-    private Story currentScenario;
 
     private static PopupPanel instance;
 
@@ -26,15 +34,35 @@ public class PopupPanel : MonoBehaviour
     }
     private void Awake()
     {
+        memNum = 0;
         instance = this;
-        gameObject.SetActive(false);
+        popUpObject.SetActive(false);
+        clickNum = 0;
+    }
+
+    public void Count()
+    {
+        if (clickNum < 2)
+        {
+            clickNum++;
+        }
+        else if (clickNum == 2)
+        {
+            clickNum = 0;
+            NextMemory();
+            OpenPanel();
+        }    
+
+    }
+    void Start()
+    {
+        StartDialogue(memory1, memory2, memory3);
     }
 
     public void OpenPanel()
     {
-        gameObject.SetActive(true);
-        StartDialogue(selectedMemory);
-
+        popUpObject.SetActive(true);
+        ContinueStory();
     }
 
     void Update()
@@ -46,18 +74,38 @@ public class PopupPanel : MonoBehaviour
     }
     private void ContinueStory()
     {
-        if (currentScenario.canContinue) //add checks for tags here before displaying the next text
+        if (memNum == 1)
         {
-            scenarioText.text = scenarioText.text + currentScenario.Continue();
-            StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            if (memoryStory1.canContinue) //add checks for tags here before displaying the next text
+            {
+                scenarioText.text = scenarioText.text + memoryStory1.Continue();
+                StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            }
         }
+        else if (memNum == 2)
+        {
+            if (memoryStory2.canContinue) //add checks for tags here before displaying the next text
+            {
+                scenarioText.text = scenarioText.text + memoryStory2.Continue();
+                StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            }
+        }
+        else if (memNum == 3)
+        {
+            if (memoryStory3.canContinue) //add checks for tags here before displaying the next text
+            {
+                scenarioText.text = scenarioText.text + memoryStory3.Continue();
+                StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            }
+        }
+
     }
 
-    public void StartDialogue(TextAsset inkJSON) //Temp. This will start the dialogue but I will need to add if statesments within using Ink tags to decide where the dialogue actually goes.
+    public void StartDialogue(TextAsset inkJSON1, TextAsset inkJSON2,TextAsset inkJSON3) //Temp. This will start the dialogue but I will need to add if statesments within using Ink tags to decide where the dialogue actually goes.
     {
-        currentScenario = new Story(inkJSON.text); //sets the current story
-        ContinueStory();
-
+        memoryStory1 = new Story(inkJSON1.text); //sets the current story
+        memoryStory2 = new Story(inkJSON2.text);
+        memoryStory3 = new Story(inkJSON3.text);
     }
     IEnumerator ForceScrollDown()
     {
@@ -68,4 +116,21 @@ public class PopupPanel : MonoBehaviour
         Canvas.ForceUpdateCanvases();
     }
 
+    public void NextMemory()
+    {
+        if (memNum == 0)
+        {
+            memNum++;
+        }
+        else if (memNum == 1)
+        {
+            memNum++;
+            scenarioText.text = null;
+        }
+        else if (memNum == 2)
+        {
+            memNum++;
+            scenarioText.text = null;
+        }
+    }
 }

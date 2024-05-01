@@ -41,8 +41,12 @@ public class ScenarioMaster : MonoBehaviour
 
     private int camNumber;
 
+    private bool pause;
+
+
 
     private const string CAMERA_TAG = "camera";
+    private const string PAUSE_TAG = "pause";
 
     private void Awake()
     {
@@ -88,10 +92,15 @@ public class ScenarioMaster : MonoBehaviour
             return;
         }
         // handles getting to the next line of dialogue when submit is pressed. However we will need to mess with this because we are having 4 separate ways of displaying dialogue and may only want to press submit for some of them. 
-        if (Input.GetButtonDown("Submit"))
+
+        if (pause == false)
         {
-            ContinueStory();
+            if (Input.GetButtonDown("Submit"))
+            {
+                ContinueStory();
+            }
         }
+
     }
     public static ScenarioMaster GetInstance() //does the thing part two
     {
@@ -133,7 +142,7 @@ public class ScenarioMaster : MonoBehaviour
 
 
     }
-    private void ContinueStory()
+    public void ContinueStory()
     {
         int index = textBoxNumber;
         if (currentScenario.canContinue) //add checks for tags here before displaying the next text
@@ -156,7 +165,6 @@ public class ScenarioMaster : MonoBehaviour
     {
         Debug.Log("this is" + (choiceIndex));
         currentScenario.ChooseChoiceIndex(choiceIndex);
-        currentScenario.Continue();
         ContinueStory();
         DisplayChoices();
     }
@@ -165,14 +173,7 @@ public class ScenarioMaster : MonoBehaviour
         choices[otherButtonNumber].SetActive(false);
     }
 
-    public void InkCheckTracker(bool boxCheck, bool flowerCheck, bool spikeCheck)
-    {
-        currentScenario.variablesState["boxPass"] = boxCheck;
-        currentScenario.variablesState["flowerPass"] = flowerCheck;
-        currentScenario.variablesState["spikePass"] = spikeCheck;
-    }
-
-    private void TransCamera()
+    public void TransCamera()
     {
         camNumber++;
         cameras[camNumber].SetActive(true);
@@ -197,14 +198,31 @@ public class ScenarioMaster : MonoBehaviour
                     Debug.Log("camera=" + tagValue);
                     TransCamera();
                     break;
+                case PAUSE_TAG:
+                    Debug.Log("pause=" + tagValue);
+                    Pause();
+                    break;
                 default:
                     Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
                     break;
             }
         }
     }
-    private void NextScene()
+    public void NextScene()
     {
         SceneManager.LoadScene(sceneName: nextScene);
+    }
+
+    public void Pause()
+    {
+        if (pause != false)
+        {
+            pause = true;
+        }
+        else if (pause == true)
+        {
+            pause = false;
+        }
+
     }
 }
