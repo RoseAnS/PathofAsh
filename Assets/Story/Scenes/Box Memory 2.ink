@@ -4,5 +4,6 @@ In his excited as the boy runs, he trips over a hoe left lying across the garden
 "Careful now Kai, can't eat dinner if you break all your teeth can you now?"
 Kai smiles sheepishly, looking around at the rows upon rows of vegetables grown atop the building.
 "Are you going to come Dad?"
-The furrow returns to the bearded mans brow. He scratches his arm, looking towards the empty crates to be filled.
+The furrow returns to the bearded man’s brow. He scratches his arm, looking towards the empty crates to be filled and further beyond to Stemon Industries where the strikes continue for its 13th month. 
 "I'll see what I can do Kai, run along now to Dad now."
+
