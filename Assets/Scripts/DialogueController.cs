@@ -26,6 +26,7 @@ public class DialogueController : MonoBehaviour
 
     [Header("Dialogue Settings")]
     [SerializeField] private float delay;
+    [SerializeField] private TextAsset currentScene;
     [SerializeField] private string nextScene;
 
 
@@ -42,6 +43,7 @@ public class DialogueController : MonoBehaviour
     {
         DisableDialogue(string.Empty, string.Empty);
         timerEnabled = false;
+        StartDialogue(currentScene);
     }
 
     private void Awake()
