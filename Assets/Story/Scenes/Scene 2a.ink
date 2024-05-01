@@ -57,5 +57,9 @@ The two figures, young and old, lanky and broad, now work in <color=green>unison
 As the bearded one takes a step forward his foot catches on a thick hunk of metal sticking from the riverbed, the <color=green>remains of an engine</color>.
 Knocked forward, the spiked figure stumbles, dropping the crates for a second.
 He waves off the <color=green>concern</color> immediately sprung from the bearded man, pulling the crates back up and continuing forward. #pause:who
+Grasshoppers let out an indigent chirp as they jump out the way of the two soaked figures pulling themselves and the crates up onto the grassy riverbank. 
+Turning up for just a second, the bearded figure sees the blue kingfisher fly into the distance. 
+A warmth fills him that he cannot quite explain, but he lets out a laugh as the two of them stand dripping on the warm afternoon grass. 
+Now far from the forest, the kingfisher flies steady, leaving the only home it ever knew, the one where it grew old, making for unknown lands beyond the ash and ruin of the past.  
 (press space to coninue) #end:itall
 -> END
