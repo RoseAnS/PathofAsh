@@ -77,7 +77,6 @@ public class PopupPanel : MonoBehaviour
     public void StartDialogue(TextAsset inkJSON) //Temp. This will start the dialogue but I will need to add if statesments within using Ink tags to decide where the dialogue actually goes.
     {
         currentScenario = new Story(inkJSON.text); //sets the current story
-
     }
     IEnumerator ForceScrollDown()
     {
@@ -98,14 +97,18 @@ public class PopupPanel : MonoBehaviour
         }
         else if (memNum == 1)
         {
+            Debug.Log("check");
             selectedMemory = memory2;
-            scenarioText.text = null;
             memNum++;
+            scenarioText.text = null;
+            StartDialogue(selectedMemory);
         }
         else if (memNum == 2)
         {
             selectedMemory = memory3;
             memNum++;
+            scenarioText.text = null;
+            StartDialogue(selectedMemory);
         }
     }
 }
