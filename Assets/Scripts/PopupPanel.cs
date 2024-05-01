@@ -18,9 +18,12 @@ public class PopupPanel : MonoBehaviour
     [SerializeField] private GameObject popUpObject;
 
     private TextAsset selectedMemory;
-    private int memNum;
+    public int memNum;
     private int clickNum;
-    private Story currentScenario;
+    private Story memoryStory1;
+    private Story memoryStory2;
+    private Story memoryStory3;
+
 
     private static PopupPanel instance;
 
@@ -51,6 +54,10 @@ public class PopupPanel : MonoBehaviour
         }    
 
     }
+    void Start()
+    {
+        StartDialogue(memory1, memory2, memory3);
+    }
 
     public void OpenPanel()
     {
@@ -67,16 +74,38 @@ public class PopupPanel : MonoBehaviour
     }
     private void ContinueStory()
     {
-        if (currentScenario.canContinue) //add checks for tags here before displaying the next text
+        if (memNum == 1)
         {
-            scenarioText.text = scenarioText.text + currentScenario.Continue();
-            StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            if (memoryStory1.canContinue) //add checks for tags here before displaying the next text
+            {
+                scenarioText.text = scenarioText.text + memoryStory1.Continue();
+                StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            }
         }
+        else if (memNum == 2)
+        {
+            if (memoryStory2.canContinue) //add checks for tags here before displaying the next text
+            {
+                scenarioText.text = scenarioText.text + memoryStory2.Continue();
+                StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            }
+        }
+        else if (memNum == 3)
+        {
+            if (memoryStory3.canContinue) //add checks for tags here before displaying the next text
+            {
+                scenarioText.text = scenarioText.text + memoryStory3.Continue();
+                StartCoroutine(ForceScrollDown()); //starts the autoscroller
+            }
+        }
+
     }
 
-    public void StartDialogue(TextAsset inkJSON) //Temp. This will start the dialogue but I will need to add if statesments within using Ink tags to decide where the dialogue actually goes.
+    public void StartDialogue(TextAsset inkJSON1, TextAsset inkJSON2,TextAsset inkJSON3) //Temp. This will start the dialogue but I will need to add if statesments within using Ink tags to decide where the dialogue actually goes.
     {
-        currentScenario = new Story(inkJSON.text); //sets the current story
+        memoryStory1 = new Story(inkJSON1.text); //sets the current story
+        memoryStory2 = new Story(inkJSON2.text);
+        memoryStory3 = new Story(inkJSON3.text);
     }
     IEnumerator ForceScrollDown()
     {
@@ -91,24 +120,17 @@ public class PopupPanel : MonoBehaviour
     {
         if (memNum == 0)
         {
-            selectedMemory = memory1;
             memNum++;
-            StartDialogue(selectedMemory);
         }
         else if (memNum == 1)
         {
-            Debug.Log("check");
-            selectedMemory = memory2;
             memNum++;
             scenarioText.text = null;
-            StartDialogue(selectedMemory);
         }
         else if (memNum == 2)
         {
-            selectedMemory = memory3;
             memNum++;
             scenarioText.text = null;
-            StartDialogue(selectedMemory);
         }
     }
 }
