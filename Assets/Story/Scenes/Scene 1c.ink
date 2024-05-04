@@ -100,7 +100,7 @@ On their wrist a bracelet of <colour=green>faded colourful beads</color> hangs l
 
 The beads clink gently as they move their hands out to rest lightly on the edge of their knees. 
 
-A soft buzzing sound floats across the lake as a nearby <color=green>honeybee</color> lands on a flower at the edge of the lake. 
+A soft buzzing sound floats across the lake as a nearby <color=green>honeybee</color> lands on a flower at the edge of the lake. #pause:true
 
 As the sound reaches their ears, a warm smile alights on their face as they remember <color=green>better times</color>. 
 
@@ -111,7 +111,7 @@ They fade into part of the pond, their focus loosening and drifting out, <color=
  
 As a breeze of wind sweeps their curly hair in the air, a curious bullfinch lands in the rustling leaves of an <color=green>oak tree</color>.
 
-The bullfinch tilts its head, observing the locks of curly hair, watching as a small cluster of loose hairs is swept up in the wind.
+The bullfinch tilts its head, observing the locks of curly hair, watching as a small cluster of loose hairs is swept up in the wind.#pause:true
 
 With a swoop, the bullfinch swiftly catches the hair, and makes homewards to build its <color=green>nest</color>.
 
@@ -122,7 +122,7 @@ Shivering, the figure opens their eyes for just a second as a drop of rain falls
 
 Pulling their <color=green>lab coat</color> tighter around them, they try their best to ignore the sudden cold and fall back into a meditative state.
 
-The fish of the pond swim away into the <color=green>shadows</color> and the buzzing insects take shelter beneath the leaves.
+The fish of the pond swim away into the <color=green>shadows</color> and the buzzing insects take shelter beneath the leaves.#pause:true
 
 From far above the forest, a sparrowhawk glances down for just a moment to see a <color=green>small figure</color> sitting in the clearing of the forest, a forest in centre of the ruins of a once mighty city.  
 
