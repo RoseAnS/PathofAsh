@@ -92,15 +92,10 @@ public class ScenarioMaster : MonoBehaviour
             return;
         }
         // handles getting to the next line of dialogue when submit is pressed. However we will need to mess with this because we are having 4 separate ways of displaying dialogue and may only want to press submit for some of them. 
-
-        if (pause == false)
+        if (Input.GetButtonDown("Submit"))
         {
-            if (Input.GetButtonDown("Submit"))
-            {
-                ContinueStory();
-            }
+            ContinueStory();
         }
-
     }
     public static ScenarioMaster GetInstance() //does the thing part two
     {
@@ -144,20 +139,20 @@ public class ScenarioMaster : MonoBehaviour
     }
     public void ContinueStory()
     {
-        int index = textBoxNumber;
-        if (currentScenario.canContinue) //add checks for tags here before displaying the next text
+        if (pause != true)
         {
-            HandleTags(currentScenario.currentTags);
-            scenarioTextObject[index].gameObject.SetActive(true);
-            scenarioText[index].text = currentScenario.Continue();
-            index++;
-            textBoxNumber++;
-            DisplayChoices();
+            int index = textBoxNumber;
+            if (currentScenario.canContinue) //add checks for tags here before displaying the next text
+            {
+                HandleTags(currentScenario.currentTags);
+                scenarioTextObject[index].gameObject.SetActive(true);
+                scenarioText[index].text = currentScenario.Continue();
+                index++;
+                textBoxNumber++;
+                DisplayChoices();
+            }
         }
-        else
-        {
-            NextScene();
-        }
+
     }
 
 
@@ -200,7 +195,14 @@ public class ScenarioMaster : MonoBehaviour
                     break;
                 case PAUSE_TAG:
                     Debug.Log("pause=" + tagValue);
-                    Pause();
+                    if (tagValue == "true")
+                    {
+                        Pause(true);
+                    }
+                    else if (tagValue == "false")
+                    {
+                        Pause(false);
+                    }
                     break;
                 default:
                     Debug.LogWarning("Tag came in but cannot or is currently not being handled: " + tag);
@@ -213,16 +215,8 @@ public class ScenarioMaster : MonoBehaviour
         SceneManager.LoadScene(sceneName: nextScene);
     }
 
-    public void Pause()
+    public void Pause(bool offOn)
     {
-        if (pause != false)
-        {
-            pause = true;
-        }
-        else if (pause == true)
-        {
-            pause = false;
-        }
-
+        pause = offOn;
     }
 }

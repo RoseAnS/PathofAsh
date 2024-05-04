@@ -1,0 +1,4 @@
+Once you freely grew between the cracks of what was built on you, branches twisting out from alleyway walls and parks filled with wildflowers that painted rainbows upon green grass. Murals of you were painted upon the wall, celebrating your image in the night with metal cans filled with chemical colour and neon light. 
+They nurture you atop their concrete towers, strung you between them like banners celebrating life, and they fed each other with your ever giving gift of life. 
+But from them came toxic fumes that choaked out the sun from which you breathed and then from the sky acid tears did weep. Their factories and metal machines cut down your trees, pushing you out of their dreams and leaving you weak. 
+When the sun rose on a forest that burned and those who nurtured you now the ones to hurt you, the sky lit red and the sunset turned to forever, darkness came to shroud you, earth and bone melted together.  

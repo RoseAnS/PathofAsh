@@ -45,18 +45,21 @@ The kingfisher flies away and the man turns his gaze down again with a sigh. He 
 A sleeping water vole suddenly finds itself lifted, letting out a squeak, as a gentle pair of hands <color=green>lifts it<color/> from between the rocks and the reeds.#camera:move
 Gently the man sets it down on the riverbank, then turning back to the reeds.
 Pulling out a <color=green>>well-kept engraved knife</color>, he begins to cut only the strongest reeds.
-Weaving them together, he begins to bind the crates with the reeds.
-He works for 10 minutes in complete silence, <color=green>complete focus</color> on his work. #pause:who
+Weaving them together, he begins to bind the crates with the reeds.#pause:true
+He works for 10 minutes in complete silence, <color=green>complete focus</color> on his work. 
 With a grunt, he pulls the now bound crates up onto his back.
 Leaning on <color=green>his branch</color>, he begins to start to navigate his way back to the riverbank
 Deliberately stepping on the rocks to avoid a cluster of frog eggs, his <color=green>foot slips</color> for a second on a mossy rock.
-With a cry, he begins to slip backwards as his weight pulls him down.
-A black gloved hand shoots out to grab his, catching him before <color=green>he falls</color>, as the lanky figure with a spiked hat gives him a grin.#pause:who
+With a cry, he begins to slip backwards as his weight pulls him down.#pause:true
+A black gloved hand shoots out to grab his, catching him before <color=green>he falls</color>, as the lanky figure with a spiked hat gives him a grin.
+
+
 The kingfisher, having swept back around, stares at the river below.
 The two figures, young and old, lanky and broad, now work in <color=green>unison</color> to lift the crates.
 As the bearded one takes a step forward his foot catches on a thick hunk of metal sticking from the riverbed, the <color=green>remains of an engine</color>.
-Knocked forward, the spiked figure stumbles, dropping the crates for a second.
-He waves off the <color=green>concern</color> immediately sprung from the bearded man, pulling the crates back up and continuing forward. #pause:who
+Knocked forward, the spiked figure stumbles, dropping the crates for a second.#pause:true
+He waves off the <color=green>concern</color> immediately sprung from the bearded man, pulling the crates back up and continuing forward. 
+
 Grasshoppers let out an indigent chirp as they jump out the way of the two soaked figures pulling themselves and the crates up onto the grassy riverbank. 
 Turning up for just a second, the bearded figure sees the blue kingfisher fly into the distance. 
 A warmth fills him that he cannot quite explain, but he lets out a laugh as the two of them stand dripping on the warm afternoon grass. 
