@@ -1,9 +1,9 @@
 A colony of woodlice skuttle out from a rotting trunk in fear as spiked black boot slams into the fallen tree.
 A flurry of a  harsh sounds are yelled backwards, received with a grimace and a short retort by their companion as the glaring sun reflects of their glasses. 
 
-The boot lifts as the figure thuds away from the other two and pushes towards the trees and away.
+The boot lifts as the figure thuds away from the other two and pushes towards the trees and away.#camera:move
 
-How do you feel?
+How do you feel?#camera:move
 
 * [Curiosity] -> branch_1a
 * [Fear] -> branch_1b
@@ -23,13 +23,13 @@ Each footfall brings with it a fast and muttering flurry of harsh speech as the 
 But even as the prey of the forest shrink away from this intruder, deep in the shadows a predator smells his fear.  
 ->branch_1_join
 === branch_1_join ===
-And then there were two remaining in the clearing. The one had shouted after the fleeing figure lets out a deep sigh and begins fidgeting with a bracelet of beads.
+And then there were two remaining in the clearing. The one had shouted after the fleeing figure lets out a deep sigh and begins fidgeting with a bracelet of beads.#camera:move
 
 With a scarred and dirtied hand, the larger figure gentle pats the back of the other and lets out a comforting growl.
 
-With ruffle of a multi-coloured lab coat, the smaller figure shakes their head and walks away to the nearby rocky pond, a large apple tree arching over its edge. 
+With ruffle of a multi-coloured lab coat, the smaller figure shakes their head and walks away to the nearby rocky pond, a large apple tree arching over its edge. #camera:move
 
-How do you feel?
+How do you feel?#camera:move
 
 * [Anxious] ->branch_2a
 * [Unsure] ->branch_2b
@@ -39,7 +39,7 @@ As the cold winds blows from beyond the forest and down into the clearing, a shu
 
 Worms in the soil shiver with each earthshaking footfall, fearing the coming of rain once more.
 
-Deeper still, tendrils of mycelium pulsing with thought grasp and grow around scraps of metal.
+Deeper still, tendrils of mycelium pulsing with thought grasp and grow around scraps of metal.#camera:move
 
 Fragments of destruction, buried not by time, but by catastrophe. 
 
@@ -51,9 +51,9 @@ A dark brown frog  sits upon a sagging lilypad in the centre of a circle of pond
 
 As the sound of crunching grass gets nearer, the frog lazily opens its amphibian eyes to see a cloud of flies swarming around an irritated figure. 
 
-The frog hops over to one of the rocks, looking towards the figure. For a moment the eyes of the figure meet the frog,  eyes filled with a sad frustration.
+The frog hops over to one of the rocks, looking towards the figure. For a moment the eyes of the figure meet the frog,  eyes filled with a sad frustration.#camera:move
 
-*Brwmeep*
+'Brwmeeeep'
 
 The frog eats a fly.
 
@@ -61,11 +61,11 @@ The frog eats a fly.
 === branch_2_join ===
 With a practiced flourish, the figure pulls out a small notepad and begins leafing through under the shade of the apple tree.
 
-A colourful array of fish dart over to the edge of the pond curiously, drawn to rainbow of their jacket and the shine of the beads on their wrists.
+A colourful array of fish dart over to the edge of the pond curiously, drawn to rainbow of their jacket and the shine of the beads on their wrists.#camera:move
 
 The figure looks down, light reflecting harshly off their glasses, shuts their notebook with a sudden slam, pulls out a small knife and  strides over to the tree, beginning to pick hanging apples from its branches.  
 
-How do you feel?
+How do you feel?#camera:move
 
 * [Angry] -> branch_3a
 * [Sad] -> branch_3b
@@ -81,7 +81,7 @@ Glancing up for a moment the eyes behind the glasses of the figure are revealed 
 
 -> branch_3_join
 === branch_3_join ===
-Placing one of the apples on a rock, they begin rhythmically  chop it into bite-sized pieces. 
+Placing one of the apples on a rock, they begin rhythmically  chop it into bite-sized pieces. #camera:move
 
 Then standing up straight, they begin to throw the apple chunks into the lake for the fish.
 
@@ -91,7 +91,7 @@ Carefully they pull out a small pair of scissors and begin to collect small leaf
 
 Then, with a couple of delicate hops, they sit upon a rock in the middle of the pond and cross their legs. 
 
-With a deep and restful breath out, they begin to take in the fresh forest air. 
+With a deep and restful breath out, they begin to take in the fresh forest air. #camera:move
 
 
 A still comes across the pond. Through the gentle rustle of leaves and the rippling of a bubbling brook, the figure breathes slow, calm, and steady.
@@ -131,7 +131,7 @@ The figure sighs as the water runs off them, the regret risen up inside them sin
 
 Sunlight creeps around the edge of the clouds, the shade that covered the pond cast away and replaced once more by the singular shadow of the apple tree. 
 
-With a warmth rising inside them, the figure’s eyes open, taking in the full beauty of the forest for what feels like the first time.
+With a warmth rising inside them, the figure’s eyes open, taking in the full beauty of the forest for what feels like the first time.#camera:move
 
 The nearby frog lets ou t a piteous croak and jumps into the water, disappointed by the lack of rain. 
 
