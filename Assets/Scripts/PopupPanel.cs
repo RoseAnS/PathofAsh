@@ -51,6 +51,7 @@ public class PopupPanel : MonoBehaviour
             clickNum = 0;
             NextMemory();
             OpenPanel();
+            ContinueStory();
         }    
 
     }
@@ -62,7 +63,6 @@ public class PopupPanel : MonoBehaviour
     public void OpenPanel()
     {
         popUpObject.SetActive(true);
-        ContinueStory();
     }
 
     void Update()
