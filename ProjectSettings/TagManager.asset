@@ -56,9 +56,12 @@ TagManager:
   - name: bg5
     uniqueID: 2831137271
     locked: 0
+  - name: art
+    uniqueID: 3601599803
+    locked: 0
   - name: bg6
     uniqueID: 3973696139
     locked: 0
-  - name: art
-    uniqueID: 3601599803
+  - name: char
+    uniqueID: 341315409
     locked: 0
