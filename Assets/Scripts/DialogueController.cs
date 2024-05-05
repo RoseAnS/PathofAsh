@@ -28,6 +28,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private float delay;
     [SerializeField] private TextAsset currentScene;
     [SerializeField] private string nextScene;
+    [SerializeField] private bool finalScene;
 
 
     private Story currentConvo;
@@ -112,9 +113,14 @@ public class DialogueController : MonoBehaviour
                     Debug.LogWarning("WARNING. The previous line was untagged and therefore a speaker cannot be assigned.");
             }
         }
-        else
+        else if(finalScene == false)
         {
             NextScene();
+        }
+        else if (finalScene == true)
+        {
+            DisableBoxes();
+            EndGame.GetInstance().EndTheGame();
         }
     }
     private void HandleTags(List<string> currentTags)
@@ -253,5 +259,12 @@ public class DialogueController : MonoBehaviour
     private void NextScene()
     {
         SceneManager.LoadScene(sceneName: nextScene);
+    }
+
+    private void DisableBoxes()
+    {
+        boxHolder.SetActive(false);
+        flowerHolder.SetActive(false);
+        spikeHolder.SetActive(false);
     }
 }
