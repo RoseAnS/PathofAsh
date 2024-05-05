@@ -96,7 +96,7 @@ With a deep and restful breath out, they begin to take in the fresh forest air. 
 
 A still comes across the pond. Through the gentle rustle of leaves and the rippling of a bubbling brook, the figure breathes slow, calm, and steady.
 
-On their wrist a bracelet of <colour=green>faded colourful beads</color> hangs loosely, clearly broken and re-stringed many times. 
+On their wrist a bracelet of <color=green>faded colourful beads</color> hangs loosely, clearly broken and re-stringed many times. 
 
 The beads clink gently as they move their hands out to rest lightly on the edge of their knees. 
 
