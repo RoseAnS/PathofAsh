@@ -16908,7 +16908,8 @@ MonoBehaviour:
   lastSpeaker: 
   delay: 2
   currentScene: {fileID: 4900000, guid: 9390b5f8e7b5f6946a2b192c20bb1216, type: 3}
-  nextScene: Scene2c
+  nextScene: Scene 2c
+  finalScene: 0
 --- !u!4 &1653921532
 Transform:
   m_ObjectHideFlags: 0
