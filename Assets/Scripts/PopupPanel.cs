@@ -51,7 +51,6 @@ public class PopupPanel : MonoBehaviour
             clickNum = 0;
             NextMemory();
             OpenPanel();
-            ContinueStory();
         }    
 
     }
@@ -122,16 +121,19 @@ public class PopupPanel : MonoBehaviour
         if (memNum == 0)
         {
             memNum++;
+            clickNum = 0;
         }
         else if (memNum == 1)
         {
             memNum++;
             scenarioText.text = null;
+            clickNum = 0;
         }
         else if (memNum == 2)
         {
             memNum++;
             scenarioText.text = null;
+            clickNum = 0;
         }
     }
 }
