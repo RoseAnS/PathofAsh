@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedScenario: {fileID: 4900000, guid: 6f34f462046304a42a618d0121355334, type: 3}
-  nextScene: Scene 3b
+  nextScene: Scene3b
   choices:
   - {fileID: 1924928068}
   - {fileID: 1326228581}
