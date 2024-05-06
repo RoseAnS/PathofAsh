@@ -103,6 +103,7 @@ public class PopupPanel : MonoBehaviour
 
     public void StartDialogue(TextAsset inkJSON1, TextAsset inkJSON2,TextAsset inkJSON3) //Temp. This will start the dialogue but I will need to add if statesments within using Ink tags to decide where the dialogue actually goes.
     {
+        Debug.Log("check");
         memoryStory1 = new Story(inkJSON1.text); //sets the current story
         memoryStory2 = new Story(inkJSON2.text);
         memoryStory3 = new Story(inkJSON3.text);

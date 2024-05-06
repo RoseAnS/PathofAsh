@@ -42,9 +42,9 @@ The kingfisher watches the figure below as it wades over to the small metallic c
 Awkwardly bending down, the figure inspects the crates as the kingfisher stares on watching the furrow dig its way across the bearded mans brow. 
 For a moment, the man glances up catching sight of the blue kingfisher, holding the gaze for just a second, a puzzled expression crossing his face. 
 The kingfisher flies away and the man turns his gaze down again with a sigh. He begins his work. 
-A sleeping water vole suddenly finds itself lifted, letting out a squeak, as a gentle pair of hands <color=green>lifts it<color/> from between the rocks and the reeds.#camera:move
+A sleeping water vole suddenly finds itself lifted, letting out a squeak, as a gentle pair of hands <color=green>lifts it</color> from between the rocks and the reeds.#camera:move
 Gently the man sets it down on the riverbank, then turning back to the reeds.
-Pulling out a <color=green>>well-kept engraved knife</color>, he begins to cut only the strongest reeds.
+Pulling out a <color=green>well-kept engraved knife</color>, he begins to cut only the strongest reeds.
 Weaving them together, he begins to bind the crates with the reeds.#pause:true
 He works for 10 minutes in complete silence, <color=green>complete focus</color> on his work. 
 With a grunt, he pulls the now bound crates up onto his back.
